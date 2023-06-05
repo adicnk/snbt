@@ -58,7 +58,7 @@
                                     </form>
                                     <hr>
                                     <div class="small text-center">
-                                        Physical Assement based on Interactive Technology
+                                        Latihan Soal dan Pendalaman Materi
                                     </div>
                                 </div>
                             </div>
