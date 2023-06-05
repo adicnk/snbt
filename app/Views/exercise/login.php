@@ -58,7 +58,7 @@
                                     </form>
                                     <hr>
                                     <div class="small text-center">
-                                        Latihan Soal dan Pendalaman Materi
+                                        Pendalaman Materi dari Soal Tahun Sebelumnya
                                     </div>
                                 </div>
                             </div>
