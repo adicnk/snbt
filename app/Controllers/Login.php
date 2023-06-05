@@ -19,7 +19,7 @@ class Login extends BaseController
     public function admin()
     {
         $data = [
-            'title' => "PAIT @ PPNI",
+            'title' => "Administrator",
             'user' => $this->userModel->searchAdmin()
         ];
         return view('admin/login', $data);
@@ -28,7 +28,7 @@ class Login extends BaseController
     public function latihan()
     {
         $data = [
-            'title' => "Login PAIT @ PPNI",
+            'title' => "User Login",
             'user' => $this->userModel->searchMahasiswaAdmin()
         ];
         return view('exercise/login', $data);
