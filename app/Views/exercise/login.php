@@ -41,7 +41,7 @@
                                     </div>
                                     <hr>
                                     <div class="small text-center mb-3">
-                                        Kisi-kisi SBMPTN dan Soal-soal Latihannya
+                                        Kisi-kisi SBMPTN dan Soal Latihan serta Pembahasannya
                                     </div>
                                     <hr>
                                     <form method="post" action="exercise/login" class="user">
