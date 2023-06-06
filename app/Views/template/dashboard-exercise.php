@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="../favicon.ico">
     <title>
-        PAIT - PPNI
+        User Dashboard
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -27,7 +27,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="dashboard">
                 <img src="favicon.ico" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold text-white">PAIT - PPNI</span>
+                <span class="ms-1 font-weight-bold text-white">BELAJAR YUK</span>
             </a>
         </div>
         <hr class="horizontal light mt-0 mb-2">
@@ -46,7 +46,7 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">menu_book</i>
                         </div>
-                        <span class="nav-link-text ms-1">Pembelajaran</span>
+                        <span class="nav-link-text ms-1">Kisi-kisi</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -54,7 +54,7 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">fitness_center</i>
                         </div>
-                        <span class="nav-link-text ms-1">Latihan</span>
+                        <span class="nav-link-text ms-1">Latihan Soal</span>
                     </a>
                 </li>
 
@@ -102,13 +102,13 @@
                         <li class="nav-item px-3 d-flex align-items-center">
                             <a href="/belajar" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-book-open me-sm-1"></i>
-                                Pembelajaran
+                                Kisi=kisi
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
                             <a href="/latihan" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-dumbbell me-sm-1"></i>
-                                Latihan
+                                Latihan Soal
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
@@ -139,7 +139,7 @@
                     <div class="row align-items-center justify-content-lg-between">
                         <div class="col-lg-6 mb-lg-0 mb-4">
                             <div class="copyright text-center text-sm text-muted text-lg-start">
-                                PPNI JABAR ©
+                                BELAJAR YUK ©
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script>

@@ -27,3 +27,5 @@ Dibuat dalam framework **CodeIgniter v4.20** yang berjalan di **PHP v8.1**
 **Tampilan Login**
 
 Merubah judul halaman login administrator dan user di dalam **Apps/Controller/Login.php** dan **Exercise.php** juga di dalam **Apps/View/admin/login.php**.
+
+**Tanpilan User**

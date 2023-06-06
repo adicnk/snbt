@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="../favicon.ico">
     <title>
-        Belajar Yuk
+        SBMPTN
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -94,14 +94,7 @@
                                     document.write(new Date().getFullYear())
                                 </script>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="about" class="btn btn-info text-white">About The Application</a>
-                                </li>
-                            </ul>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             </footer>

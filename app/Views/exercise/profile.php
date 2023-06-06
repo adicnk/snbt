@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <div class="subheading mb-3">Jurusan : <?= $usr['jname']; ?></div>
+                            <div class="subheading mb-3">Sekolah Asal: <?= $usr['jname']; ?></div>
                             <div>Email : <?= $usr['email'] ?></div>
                         </div>
                     </div>

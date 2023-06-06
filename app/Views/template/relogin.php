@@ -39,7 +39,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>PPNI JABAR &copy; 2022</span>
+                        <span>BELAJAR YUK &copy; 2022</span>
                     </div>
                 </div>
             </footer>
