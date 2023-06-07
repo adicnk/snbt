@@ -12,7 +12,7 @@
                 <!--
                 <iframe src="`https://materi-pait.devinc.website/tubuh" width="100%" height="500px"></iframe>
                 -->
-                <iframe src="http://localhost/pait/public/materi/tubuh" width="100%" height="500px"></iframe>
+                <iframe src="http://belajaryuk.devinc.website" width="100%" height="500px"></iframe>
             </div>
             <div class="card-footer">
             </div>

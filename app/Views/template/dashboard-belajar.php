@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="../favicon.ico">
     <title>
-        PAIT - PPNI
+        Belajar Yuk | Kisi-kisi
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -27,7 +27,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="dashboard">
                 <img src="favicon.ico" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold text-white">PAIT - PPNI</span>
+                <span class="ms-1 font-weight-bold text-white">Belajar Yuk</span>
             </a>
         </div>
         <hr class="horizontal light mt-0 mb-2">
