@@ -57,7 +57,7 @@ $routes->get('/latihan', 'Exercise::soal');
 $routes->get('/belajar', 'Exercise::belajar');
 $routes->get('/profile', 'Exercise::profile');
 $routes->get('/about', 'Exercise::about');
-
+$routes->get('/info', 'Exercise::info');
 
 /*
  * --------------------------------------------------------------------

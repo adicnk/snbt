@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white active bg-gradient-primary" href="belajar">
+                    <a class="nav-link text-white" href="belajar">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">menu_book</i>
                         </div>
@@ -68,7 +68,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="info">
+                    <a class="nav-link text-white active bg-gradient-primary" href="info" >
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">info</i>
                         </div>

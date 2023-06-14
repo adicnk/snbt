@@ -192,6 +192,14 @@ class Exercise extends BaseController
         return view('exercise/profile', $data);
     }
 
+    public function info()
+    {
+        $data = [
+            'title' => "PAIT @ PPNI"
+        ];
+        return view('exercise/info', $data);
+    }
+
     public function about()
     {
         return view('exercise/about');

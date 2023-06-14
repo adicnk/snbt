@@ -1,4 +1,4 @@
-<?= $this->extend('template/dashboard-belajar') ?>
+<?= $this->extend('template/dashboard-info') ?>
 <?= $this->section('content') ?>
 
 
@@ -12,7 +12,7 @@
                 <!--
                 <iframe src="`https://materi-pait.devinc.website/tubuh" width="100%" height="500px"></iframe>
                 -->
-                <iframe src="https://belajaryuk.devinc.website/kisi-kisi-demo/" width="100%" height="500px"></iframe>
+                <iframe src="https://belajaryuk.devinc.website/tentang-utbk-snbt-2023/" width="100%" height="500px"></iframe>
             </div>
             <div class="card-footer">
             </div>

@@ -12,7 +12,7 @@
             <div class="card-body">
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="flex-grow-1">
-                        <div>Menghadapi SBMPTN membutuhkan media pembelajaran yang efektif sehingga
+                        <div>Menghadapi UTBK/SNBT dan SBMPTN membutuhkan media pembelajaran yang efektif sehingga
                             menimbulkan semangat belajar siswa dengan penggunaan teknologi
                             yang lebih interaktif dan menyenangkan.</div>
                     </div>
