@@ -60,6 +60,10 @@
                                     <div class="small text-center">
                                         Pendalaman Materi dari Soal Tahun Sebelumnya
                                     </div>
+                                    <hr>
+                                    <p><strong><div class="small text-center text-red">
+                                        Belajar Yuk © 2023
+                                    </div></strong></p>
                                 </div>
                             </div>
                         </div>
