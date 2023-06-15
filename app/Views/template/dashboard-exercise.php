@@ -27,7 +27,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="dashboard">
                 <img src="favicon.ico" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold text-white">BELAJAR YUK</span>
+                <span class="ms-1 font-weight-bold text-white">Belajar Yuk</span>
             </a>
         </div>
         <hr class="horizontal light mt-0 mb-2">
@@ -153,12 +153,12 @@
                 <div class="container-fluid">
                     <div class="row align-items-center justify-content-lg-between">
                         <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                BELAJAR YUK ©
+                            <strong><div class="copyright text-center text-sm text-muted text-lg-start">
+                                Belajar Yuk ©
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script>
-                            </div>
+                            </div></strong>
                         </div>
                         <div class="col-lg-6">
                             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
