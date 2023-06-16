@@ -177,7 +177,9 @@ class Exercise extends BaseController
     public function belajar()
     {
         $data = [
-            'title' => "PAIT @ PPNI"
+            'title' => "PAIT @ PPNI",
+            'user' => $this->userModel->searhAdminID(session()->get('userID')),
+
         ];
         return view('exercise/belajar', $data);
     }
