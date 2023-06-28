@@ -11,13 +11,19 @@
                 <div class="card-body">
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <div class="subheading mb-3">Sekolah Asal: <?= $usr['jname']; ?></div>
+                            <div class="subheading mb-3">Sekolah Asal: <?= $usr['asal']; ?></div>
+                            <div class="subheading mb-3">Pilihan Universitas: <?= $usr['pilihan']; ?></div>
+                            <div class="subheading mb-3">Pilihan Jurusan: <?= $usr['jurusan']; ?></div>
+                            <div class="subheading mb-3">Alamat <?= $usr['alamat']; ?></div>
+                            <div class="subheading mb-3">Nmor HP: <?= $usr['hp']; ?></div>
                             <div>Email : <?= $usr['email'] ?></div>
+                            <div>&nbsp</div><div>&nbsp</div>
+                            <div>Paket Pembelajaran : <?= $usr['paket'] ?></div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <p>Nilai Latihan Rata-rata : <?= $nilai_ratarata ?></p>
+                    <strong><p>Nilai Latihan Rata-rata : <?= $nilai_ratarata ?></p></strong>
                 </div>
                 <div class="card-footer">
                     <a href="/dashboard" class="btn btn-primary">DASHBOARD</a>

@@ -32,11 +32,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Kategori</strong></div>
                                     <select class="form-control" name="kategoriSoal" id="kategoriSoal" onfocusin="yellowin(this);" onfocusout="whiteout(this)">
-                                        <option value=1>Pemeriksaan Ektrimitas</option>
-                                        <option value=2>Pemeriksaan Kepala dan Leher</option>
-                                        <option value=3>Pemeriksaan Dada</option>
-                                        <option value=4>Pemeriksaan Perut</option>
-                                        <option value=5>Pemeriksaan Genitalia dan Rectum</option>
+                                        <option value=1>Skolastik</option>
                                     </select>
                                 </div>
                             </div>
