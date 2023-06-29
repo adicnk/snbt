@@ -7,10 +7,11 @@ use App\Models\LoginMDL;
 use App\Models\SoalMDL;
 use App\Models\JawabanMDL;
 use App\Models\KategoriMDL;
+use App\Models\ConfigMDL;
 
 class Submit extends BaseController
 {
-    protected $userModel, $loginModel, $soalModel, $jawabanModel, $kategoriModel;
+    protected $userModel, $loginModel, $soalModel, $jawabanModel, $kategoriModel, $configModel;
 
     public function __construct()
     {
@@ -19,6 +20,7 @@ class Submit extends BaseController
         $this->soalModel = new SoalMDL();
         $this->jawabanModel = new JawabanMDL();
         $this->kategoriModel = new KategoriMDL();
+        $this->configModel = new ConfigMDL();
     }
 
     public function admin()
@@ -123,6 +125,8 @@ class Submit extends BaseController
             }
         endif;
 
+        $this->configModel->addTotalSoal();
+
         $this->soalModel->save([
             'kategori_soal_id' => $this->request->getVar('kategoriSoal'),
             'name' => $this->request->getVar('isiSoal'),
@@ -130,7 +134,8 @@ class Submit extends BaseController
             'picture_url' => $namaGambar,
             'is_audio' => $isAudio == "on" ? 1 : null,
             'audio_url' => $namaSuara,
-            'is_choosen' => $isChoosen == "on" ? 1 : null
+            'is_choosen' => 1
+            //'is_choosen' => $isChoosen == "on" ? 1 : null
         ]);
 
         //ID terakhir yg di buat di tabel soal
