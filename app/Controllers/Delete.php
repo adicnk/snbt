@@ -64,6 +64,7 @@ class Delete extends BaseController
 
         $this->soalModel->delSoal($id);
         $this->jawabanModel->delJawaban($id);
+        $this->soalModel->reSortIdx();
 
         $data = [
             'title' => "Data soal berhasil di Delete",

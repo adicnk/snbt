@@ -147,10 +147,10 @@ class Submit extends BaseController
             $this->kategoriModel->saveJumlah($x, $val);
         }
 
-        $this->soalModel->save([
-            'id' => $lastID,
-            'idx' => $lastID
-        ]);
+//        $this->soalModel->save([
+//            'id' => $lastID,
+//            'idx' => $lastID
+ //       ]);
 
         $this->jawabanModel->save([
             'soal_id' => $lastID,
@@ -160,7 +160,9 @@ class Submit extends BaseController
             'jawabanD' => $this->request->getVar('jawabanD') ? $this->request->getVar('jawabanD') : null,
             'jawabanE' => $this->request->getVar('jawabanE') ? $this->request->getVar('jawabanE') : null,
             'jawaban_benar' => $this->request->getVar('jawabanBenar')
-        ]);
+        ]);  
+        
+        $this->soalModel->reSortIdx();
 
         return redirect()->to('../admin/soal');
     }

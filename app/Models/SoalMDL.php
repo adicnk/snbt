@@ -94,7 +94,20 @@ class SoalMDL extends Model
         return $this->countAllResults();
     }
 
-    public function reIndexSoal(){
+    public function reSortIdx(){
+        $db      = \Config\Database::connect();
+        $builder = $db->table('soal');
+        $query = $builder->get();
+        $index= 0;
+        foreach ($query->getResult() as $q){
+            $id = $q->id; 
         
+            $idx_new= $index+1;
+            $builder->set('idx', $idx_new);
+            $builder->where('id', $id);
+        
+            $builder->update();
+            $index++;
+        }
     }
 }
