@@ -75,7 +75,7 @@
     <script src="./material_assets/js/material-dashboard.min.js?v=3.0.2"></script>
 
     <script>
-        function urlBroserChange() {
+        function urlBrowserChange() {
             alert();
             history.pushState("object or string representing the state of the page", "Score Latihan - PAIT", "/latihan/selesai");
         }
