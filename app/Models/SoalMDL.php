@@ -93,4 +93,8 @@ class SoalMDL extends Model
         $this->where(['is_choosen' => 1]);
         return $this->countAllResults();
     }
+
+    public function reIndexSoal(){
+        
+    }
 }
