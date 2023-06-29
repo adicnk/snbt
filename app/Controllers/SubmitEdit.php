@@ -6,10 +6,11 @@ use App\Models\UserMDL;
 use App\Models\LoginMDL;
 use App\Models\SoalMDL;
 use App\Models\JawabanMDL;
+use App\Models\ConfigMDL;
 
 class SubmitEdit extends BaseController
 {
-    protected $userModel, $loginModel, $soalModel, $jawabanModel;
+    protected $userModel, $loginModel, $soalModel, $jawabanModel, $configModel;
 
     public function __construct()
     {
@@ -17,6 +18,7 @@ class SubmitEdit extends BaseController
         $this->loginModel = new LoginMDL();
         $this->soalModel = new SoalMDL();
         $this->jawabanModel = new JawabanMDL();
+        $this->configModel = new ConfigMDL();
     }
 
     public function admin($id)
@@ -69,25 +71,27 @@ class SubmitEdit extends BaseController
 
     public function soal($id)
     {
-        //dd($this->request->getVar());
+        $namaGambar = null;
         $isPicture = $this->request->getVar('isPicture');
         $fileGambar = $this->request->getFile('fileGambar');
         $isAudio = $this->request->getVar('isAudio');
         $fileAudio = $this->request->getFile('fileAudio');
         $isChoosen = $this->request->getVar('isChoosen');
+        $isChoosenBefore = $this->soalModel->isChoosenStatus($id);
+        $namaGambar = $this->soalModel->getName($id);
 
-        $namaGambar = null;
         $namaSuara = null;
-
-        if ($fileGambar) :
-            // Pindahkan file ke folder gambar
-            $fileGambar->move('img');
+        if ($namaGambar=="") :
             // Ambil nama file
-            if ($isPicture) {
+            if ($isPicture) {                
                 $namaGambar = $fileGambar->getName();
             } else {
                 $namaGambar = null;
             }
+            // Pindahkan file ke folder gambar
+            if ($fileGambar->getName()) {
+                $fileGambar->move('img');
+            };
         endif;
         if ($fileAudio) :
             $fileAudio->move('aud');
@@ -98,6 +102,18 @@ class SubmitEdit extends BaseController
             }
         endif;
 
+        //dd($isChoosenBefore ."|".$isChoosen);
+
+        if ($isChoosen<>$isChoosenBefore) {
+            if ($isChoosenBefore=="on") {
+                $isChoosen = null;
+                $this->configModel->subtractTotalSoal();
+            } else {
+                $isChoosen = "on";
+                $this->configModel->addTotalSoal();
+            }
+        }
+        
         $this->soalModel->save([
             'id' => $id,
             'kategori_soal_id' => $this->request->getVar('kategoriSoal'),

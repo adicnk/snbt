@@ -39,7 +39,7 @@
                 </div>
                 <div class="text-center">
                     <?php if ($s['is_picture'] == 1) : ?>
-                        <img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="20%" alt="gambar_soal">
+                        <img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="30%" alt="gambar_soal">
                     <?php endif ?>
                 </div>
                 <br />
@@ -55,8 +55,41 @@
                     <form method="post" action="/latihan?id=<?= $noID + 1 ?>">
                         <h5 class="card-title">Soal No. <?= $noID ?></h5>
                         <p class="card-text"> <?= $s['name']; ?></p>
-                        <ul class="list-group list-group-flush">
+                        
+                        <?php if ($s['name']=="") { ?>
+                            
+                            
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item flex-fill"><center><b>A</b>
+                                    <label>
+                                        <input name="jawabanA" id="jawabanA" type="radio" onclick="pilihan(1)" />
+                                    </label></center>
+                                </li>
+                                <li class="list-group-item flex-fill"><center><b>B</b>
+                                    <label>
+                                        <input name="jawabanB" id="jawabanB" type="radio" onclick="pilihan(2)" />
+                                    </label></center>
+                                </li>
+                                <li class="list-group-item flex-fill"><center><b>C</b>
+                                    <label>
+                                        <input name="jawabanC" id="jawabanC" type="radio" onclick="pilihan(3)" />
+                                    </label></center>
+                                </li>
+                                <li class="list-group-item flex-fill"><center><b>D</b>
+                                    <label>
+                                        <input name="jawabanD" id="jawabanD" type="radio" onclick="pilihan(4)" />
+                                    </label></center>
+                                </li>
+                                <li class="list-group-item flex-fill"><center><b>E</b>
+                                    <label>
+                                        <input name="jawabanE" id="jawabanE" type="radio" onclick="pilihan(5)" />
+                                    </label></center>
+                                </li>
 
+                            
+                            <?php } else { ?>
+                                
+                                <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>A. </b>
                                 <label>
                                     <input name="jawabanA" id="jawabanA" type="radio" onclick="pilihan(1)" />
@@ -87,8 +120,8 @@
                                     <span><?= $s['jawabanE']; ?></span>
                                 </label>
                             </li>
-
-
+                            
+                            <?php } ?>
                         </ul>
 
                         <?php if ($noID == $total) { ?>

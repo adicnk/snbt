@@ -36,6 +36,16 @@ class SoalMDL extends Model
         return $this->countAllResults();
     }
 
+    public function getName($id)
+    {
+        
+        $this->where(['id' => $id]);
+        $query =  $this->findAll();
+        foreach ($query as $q) {
+            return $q['picture_url'];
+        }
+    }
+
     public function delSoal($id)
     {
         $this->delete(['id' => $id]);
@@ -48,6 +58,19 @@ class SoalMDL extends Model
         return $this->findAll();
     }
 
+    public function  isChoosenStatus($id) {
+
+        $this->where(['id' => $id]);
+        $query =  $this->findAll();
+        foreach ($query as $q) {
+            if ($q['is_choosen']==1) {
+                return "on";
+            } else {
+                return "off";
+            };
+        }
+
+    }
 
     public function searchJawabanSoalIdx($id, $value)
     {

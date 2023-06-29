@@ -33,11 +33,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><strong>Kategori</strong></div>
                                         <select class="form-control" name="kategoriSoal" id="kategoriSoal" onfocusin="yellowin(this);" onfocusout="whiteout(this)">
-                                            <option value=1 <?= $s['kategori_soal_id'] == 1 ? 'selected' : '' ?>>Pemeriksaan Ektrimitas</option>
-                                            <option value=2 <?= $s['kategori_soal_id'] == 2 ? 'selected' : '' ?>>Pemeriksaan Kepala dan Leher</option>
-                                            <option value=3 <?= $s['kategori_soal_id'] == 3 ? 'selected' : '' ?>>Pemeriksaan Dada</option>
-                                            <option value=4 <?= $s['kategori_soal_id'] == 4 ? 'selected' : '' ?>>Pemeriksaan Perut</option>
-                                            <option value=5 <?= $s['kategori_soal_id'] == 5 ? 'selected' : '' ?>>Pemeriksaan Genitalia dan Rectum</option>
+                                            <option value=1 <?= $s['kategori_soal_id'] == 1 ? 'selected' : '' ?>>Skolastik</option>
                                         </select>
                                     </div>
                                 </div>

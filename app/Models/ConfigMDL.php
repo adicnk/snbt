@@ -21,6 +21,26 @@ class ConfigMDL extends Model
         }
     }
 
+    public function addTotalSoal($val=0){
+        $this->where(['id' => 1]);
+        $query = $this->findAll();
+        foreach ($query as $q) {
+            $val = $q['total_soal']+1;
+            $this->set('total_soal', $val);
+            $this->update();            
+        }
+    }
+
+    public function subtractTotalSoal($val=0){
+        $this->where(['id' => 1]);
+        $query = $this->findAll();
+        foreach ($query as $q) {
+            $val = $q['total_soal']-1;
+            $this->set('total_soal', $val);
+            $this->update();            
+        }
+    }    
+
     public function nilaiMinimum()
     {
         $this->where(['id' => 1]);
