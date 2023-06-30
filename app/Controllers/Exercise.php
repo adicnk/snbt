@@ -41,27 +41,10 @@ class Exercise extends BaseController
         $no = $this->request->getVar('id');
 
         $soalArr = array_fill(0, $totalSoal, null);
-        $soalTempArr = array_fill(0, $totalSoal, null);
         $jawabanArr = array_fill(0, $totalSoal, null);
 
         for ($x = 0; $x < $totalSoal; $x++) {
-            $randID = $this->randomID($totalSoal);
-        }
-
-        $totalArr = count($soalTempArr) - 1;
-        for ($x = 0; $x < $totalSoal; $x++) {
-            $soalArr[$x] = $x + 1;
-            $soalTempArr[$x] = $x + 1;
-        }
-        while ($totalArr) {
-            for ($x = 0; $x <= $totalArr; $x++) {
-                $totalArr = $totalArr - $x;
-                $z = $soalArr[$totalArr];
-                $randID = $this->randomID($totalArr);
-                $p = $soalArr[$randID];
-                $soalArr[$randID] = $z;
-                $soalArr[$totalArr] =  $p;
-            }
+            $soalArr[$x]=$x+1;
         }
 
         session()->set('noId', 1);
@@ -75,11 +58,6 @@ class Exercise extends BaseController
             'total' => $totalSoal
         ];
         return view('exercise/latihan', $data);
-    }
-
-    public function randomID($total)
-    {
-        return rand(1, $total);
     }
 
     public function login()

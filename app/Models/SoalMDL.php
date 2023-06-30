@@ -74,17 +74,15 @@ class SoalMDL extends Model
 
     public function searchJawabanSoalIdx($id, $value)
     {
-        $x = 1;
         $this->where(['is_choosen' => 1]);
         $this->join('jawaban', 'jawaban.soal_id = soal.id');
         $query =  $this->findAll();
         foreach ($query as $q) {
-            if ($x == $id) :
-                if ($q['jawaban_benar'] == $value) :
+                if ($q['jawaban_benar'] == $value) {
                     return true;
-                endif;
-            endif;
-            $x++;
+                } else {
+                    return false;
+                }  
         }
     }
 
@@ -110,4 +108,5 @@ class SoalMDL extends Model
             $index++;
         }
     }
+
 }

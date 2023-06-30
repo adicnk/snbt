@@ -23,9 +23,9 @@ class Latihan extends BaseController
     }
 
     public function index()
-    {
-        
-        if (!session()->get('isFinish')) {                    
+    {        
+
+        if (!session()->get('isFinish')) {                                            
 
             $soal = $this->soalModel->isChoosen();
             $totalSoal = $this->configModel->totalSoal();
@@ -40,7 +40,7 @@ class Latihan extends BaseController
             $pilihanE = $this->request->getVar('jawabanE');
 
             $no = $this->request->getVar('id');
-            $answer = session()->get('jawabanArr');
+            $answer = session()->get('jawabanArr');            
 
             if ($pilihanA) {
                 $answer[$no - 2] = $pilihanA ? 1 : null;
@@ -61,10 +61,12 @@ class Latihan extends BaseController
             session()->set('noId', $no);
             session()->set('jawabanArr', $answer);
 
+            $answer = session()->get('jawabanArr');
             // $no == $totalSoal + 1 ? dd(session()->get('jawabanArr')) : "";
             if ($no == $totalSoal + 1) {
+                
+
                 session()->set('isFinish', true);
-                $answer = session()->get('jawabanArr');
                 $benar = 0;
                 $salah = 0;
                 $diisi = 0;
