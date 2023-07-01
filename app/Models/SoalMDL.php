@@ -78,13 +78,9 @@ class SoalMDL extends Model
         $this->join('jawaban', 'jawaban.soal_id = soal.id');
         $query =  $this->findAll();
         foreach ($query as $q) {
-            d($query);
-            d($q['jawaban_benar']);
                 if ($q['jawaban_benar'] == $value) {
-                    d(strval($value)." | benar");
                     return true;
                 } else {
-                    d(strval($value)." | salah");
                     return false;
                 }  
         }

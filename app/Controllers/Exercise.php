@@ -52,7 +52,7 @@ class Exercise extends BaseController
         session()->set('jawabanArr', $jawabanArr);
 
         $data = [
-            'title' => "Latihan Soal PAIT",
+            'title' => "Latihan Soal",
             'soalIdx' => $soalArr,
             'soal' => $soal,
             'total' => $totalSoal

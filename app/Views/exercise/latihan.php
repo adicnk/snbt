@@ -126,13 +126,13 @@
 
                         <?php if ($noID == $total) { ?>
                             <button type="submit" class="btn btn-primary mt-3"><i class="material-icons opacity-10">chevron_left</i>Soal No. <?= $noID - 1 ?></button>
-                            <button name="Selesai" type="submit" class="btn btn-primary mt-3">Selesai <i class="material-icons opacity-10" onclick="urlBrowserChange()">chevron_right</i></button>
+                            <button type="submit" class="btn btn-primary mt-3">Selesai <i class="material-icons opacity-10" onclick="urlBrowserChange()">chevron_right</i></button>
                         <?php } ?>
                         <?php if ($noID == 1) { ?>
                             <button type="submit" class="btn btn-primary mt-3">Soal No. 2 <i class="material-icons opacity-10">chevron_right</i></button>
                         <?php } ?>
                         <?php if (1 < $noID and $noID < $total) { ?>
-                            <button type="submit" class="btn btn-primary mt-3"><i class="material-icons opacity-10">chevron_left</i>Soal No. <?= $noID - 1 ?></button>
+                            <button name="prev" value="Soal No. <?= $noID - 1 ?>" type="submit" class="btn btn-primary mt-3"><i class="material-icons opacity-10">chevron_left</i>Soal No. <?= $noID - 1 ?></button>
                             <button type="submit" class="btn btn-primary mt-3">Soal No. <?= $noID +  1 ?> <i class="material-icons opacity-10">chevron_right</i></button>
                         <?php } ?>
 

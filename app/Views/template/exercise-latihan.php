@@ -80,6 +80,11 @@
             history.pushState("object or string representing the state of the page", "Score Latihan - PAIT", "/latihan/selesai");
         }
 
+        function navButton(){
+            document.getElementById("navButton").value = "previous";
+            alert();
+        }
+
         function pilihan(value) {
             $option1 = document.getElementById("jawabanA");
             $option2 = document.getElementById("jawabanB");

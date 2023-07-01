@@ -23,7 +23,7 @@ class Latihan extends BaseController
     }
 
     public function index()
-    {        
+    {     
 
         if (!session()->get('isFinish')) {                                            
 
@@ -37,7 +37,7 @@ class Latihan extends BaseController
             $pilihanB = $this->request->getVar('jawabanB');
             $pilihanC = $this->request->getVar('jawabanC');
             $pilihanD = $this->request->getVar('jawabanD');
-            $pilihanE = $this->request->getVar('jawabanE');
+            $pilihanE = $this->request->getVar('jawabanE');            
 
             $no = $this->request->getVar('id');
             $answer = session()->get('jawabanArr');            
@@ -56,6 +56,14 @@ class Latihan extends BaseController
             }
             if ($pilihanE) {
                 $answer[$no - 2] = $pilihanE ? 5 : null;
+            }
+
+            $back=$this->request->getVar('prev');
+            if ($back<>null){
+                $panjangText=strlen($back);
+                $isiText=substr($back,9,$panjangText-9);
+                //d($isiText);
+                $no=strval($isiText);
             }
 
             session()->set('noId', $no);
@@ -98,7 +106,7 @@ class Latihan extends BaseController
                 ]);
 
                 $data = [
-                    'title' => "Score Latihan Soal PAiT",
+                    'title' => "Score Latihan Soal",
                     'benar' => $benar,
                     'salah' => $salah,
                     'diisi' => $diisi,
@@ -110,13 +118,13 @@ class Latihan extends BaseController
             }
 
             $data = [
-                'title' => "Latihan Soal PAiT",
+                'title' => "Latihan Soal",
                 'soalIdx' => $soalArr,
                 'soal' => $soal,
                 'total' => $totalSoal
             ];
             return view('exercise/latihan', $data);
         }
-        redirect()->to('../');
+        //redirect()->to('../');
     }
 }
