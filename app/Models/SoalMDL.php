@@ -29,6 +29,13 @@ class SoalMDL extends Model
         return $this->findAll();
     }
 
+    public function searchSoalIDX($id)
+    {
+        $this->where(['idx' => $id]);
+        return $this->findAll();
+    }
+
+
     public function getJumlahSoal($id)
     {
         $this->where(['kategori_soal_id' => $id]);
@@ -37,8 +44,7 @@ class SoalMDL extends Model
     }
 
     public function getName($id)
-    {
-        
+    {        
         $this->where(['id' => $id]);
         $query =  $this->findAll();
         foreach ($query as $q) {
@@ -46,9 +52,17 @@ class SoalMDL extends Model
         }
     }
 
+    public function getSoalID($id){
+        $this->where(['idx' => $id]);
+        $query =  $this->findAll();
+        foreach ($query as $q) {
+            return $q['id'];
+        }
+    }
+
     public function delSoal($id)
     {
-        $this->delete(['id' => $id]);
+        $this->delete(['idx' => $id]);
     }
 
     public function isChoosen()
@@ -74,7 +88,7 @@ class SoalMDL extends Model
 
     public function searchJawabanSoalIdx($id, $value)
     {
-        $this->where(['soal.id' => $id]);
+        $this->where(['soal.idx' => $id]);
         $this->join('jawaban', 'jawaban.soal_id = soal.id');
         $query =  $this->findAll();
         foreach ($query as $q) {

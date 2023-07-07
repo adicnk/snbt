@@ -62,8 +62,9 @@ class Delete extends BaseController
             $fileSuara ? unlink('aud/' . $fileSuara) : '';
         }
 
-        $this->soalModel->delSoal($id);
-        $this->jawabanModel->delJawaban($id);
+        $soal_id = $this->soalModel->getSoalID($id);
+        $this->soalModel->delSoal($soal_id);
+        $this->jawabanModel->delJawaban($soal_id);
         $this->soalModel->reSortIdx();
 
         $data = [

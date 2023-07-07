@@ -24,7 +24,7 @@
             <div class="card-text text-center">
 
                 <?php foreach ($soal as $s) : ?>
-                    <form method="post" action="../../submitEdit/soal/<?= $s['idx'] ?>" enctype="multipart/form-data">
+                    <form method="post" action="../../submitEdit/soal/<?= $s['id'] ?>" enctype="multipart/form-data">
                         <?= csrf_field() ?>
 
                         <div class="form-group">
@@ -112,7 +112,7 @@
                                     </h2>
                                 </div>
 
-                                <?php $queryClass = $db->table('jawaban')->getWhere(['soal_id' => $s['idx']]);
+                                <?php $queryClass = $db->table('jawaban')->getWhere(['soal_id' => $s['id']]);
                                 foreach ($queryClass->getResult('array') as $qc) : ?>
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">

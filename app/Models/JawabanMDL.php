@@ -23,7 +23,7 @@ class JawabanMDL extends Model
 
     public function delJawaban($id)
     {
-        $this->delete(['soal_id' => $id]);
+            $this->delete(['soal_id' => $id]);
     }
 
     public function search($id)

@@ -81,18 +81,16 @@ class SubmitEdit extends BaseController
         $namaGambar = $this->soalModel->getName($id);
 
         $namaSuara = null;
-        if ($namaGambar=="") :
             // Ambil nama file
-            if ($isPicture) {                
-                $namaGambar = $fileGambar->getName();
+            if ($isPicture) {   
+                if ($namaGambar==""){             
+                    $namaGambar = $fileGambar->getName();
+                    $fileGambar->move('img');
+                }                
             } else {
                 $namaGambar = null;
             }
-            // Pindahkan file ke folder gambar
-            if ($fileGambar->getName()) {
-                $fileGambar->move('img');
-            };
-        endif;
+            d($namaGambar);
         if ($fileAudio) :
             $fileAudio->move('aud');
             if ($isAudio) {
