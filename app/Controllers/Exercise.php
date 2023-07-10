@@ -58,7 +58,8 @@ class Exercise extends BaseController
             'title' => "Latihan Soal",
             'soalIdx' => $soalArr,
             'soal' => $soal,
-            'total' => $totalSoal            
+            'total' => $totalSoal,
+            'paket' => $user            
         ];
         return view('exercise/latihan', $data);
     }
@@ -183,8 +184,17 @@ class Exercise extends BaseController
         return view('exercise/info', $data);
     }
 
+
     public function about()
     {
         return view('exercise/about');
+    }
+
+    public function latihanFP()
+    {
+    $data = [
+        'paket' => $this->userModel->searhAdminID(session()->get('userID'))    
+    ];
+        return view('exercise/latihan-fp',$data);
     }
 }
