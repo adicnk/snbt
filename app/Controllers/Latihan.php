@@ -6,13 +6,14 @@ use App\Models\ConfigMDL;
 use App\Models\SoalMDL;
 use App\Models\JawabanMDL;
 use App\Models\LatihanMDL;
+use App\Models\UserMDL;
 
 use CodeIgniter\I18n\Time;
 
 class Latihan extends BaseController
 {
 
-    protected $soalModel, $configModel, $jawabanModel, $latihanModel;
+    protected $soalModel, $configModel, $jawabanModel, $latihanModel, $userModel;
 
     public function __construct()
     {
@@ -20,6 +21,7 @@ class Latihan extends BaseController
         $this->jawabanModel = new JawabanMDL();
         $this->configModel = new ConfigMDL();
         $this->latihanModel = new LatihanMDL();
+        $this->userModel = new UserMDL();
     }
 
     public function index()
@@ -27,8 +29,10 @@ class Latihan extends BaseController
 
         if (!session()->get('isFinish')) {                                            
 
+            $user = $this->userModel->searhAdminID(session()->get('userID'));
+            $totalSoal = $this->configModel->totalSoal($user);
             $soal = $this->soalModel->isChoosen();
-            $totalSoal = $this->configModel->totalSoal();
+            //$totalSoal = $this->configModel->totalSoal();
             $nilaiMin = $this->configModel->nilaiMinimum();
 
             $soalArr = session()->get('soalArr');

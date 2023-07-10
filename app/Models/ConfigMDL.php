@@ -10,14 +10,37 @@ class ConfigMDL extends Model
     protected $useTimestamps = true;
 
     // Field yang boleh diisi waktu saving data ** harus didefinisikan dulu **
-    protected $allowedFields = ['total_soal'];
+    protected $allowedFields = ['total_soal_demo', 'total_soal_bronze', 'total_soal_silver', 'total_soal_diamond', 'total_soal_premuium'];
 
-    public function totalSoal()
+    public function totalSoal($user)
     {
         $this->where(['id' => 1]);
         $query = $this->findAll();
         foreach ($query as $q) {
-            return $q['total_soal'];
+            $paketA = $q['total_soal_demo'];
+            $paketB = $q['total_soal_bronze'];
+            $paketC = $q['total_soal_silver'];
+            $paketD = $q['total_soal_diamond'];
+            $paketE = $q['total_soal_premium'];
+        }
+        foreach ($user as $usr) {
+            switch ($usr['paket']) {
+                case "demo" :
+                    return $paketA;
+                    break;
+                case "bronze" :
+                    return $paketB;
+                    break;
+                case "silver" :
+                    return $paketC;
+                    break;
+                case "diamond" :
+                    return $paketD;
+                    break;
+                case "premium" :
+                    return $paketE;
+                    break;
+            }
         }
     }
 

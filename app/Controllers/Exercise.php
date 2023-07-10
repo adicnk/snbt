@@ -36,10 +36,13 @@ class Exercise extends BaseController
     public function soal()
     {
         session()->set('isFinish', false);
-        $soal = $this->soalModel->isChoosen();
-        $totalSoal = $this->configModel->totalSoal();
+        $user = $this->userModel->searhAdminID(session()->get('userID'));
+        // Soal tp (tanpa pembahasan) dan dp (dengan pembahasan)        
+        //$soal = $this->soalModel->isChoosen();
+        //$soal = $this->soalModel->isChoosen();
+        $soal = $this->soalModel->isTP();
+        $totalSoal = $this->configModel->totalSoal($user);
         $no = $this->request->getVar('id');
-
         $soalArr = array_fill(0, $totalSoal, null);
         $jawabanArr = array_fill(0, $totalSoal, null);
 
@@ -55,7 +58,7 @@ class Exercise extends BaseController
             'title' => "Latihan Soal",
             'soalIdx' => $soalArr,
             'soal' => $soal,
-            'total' => $totalSoal
+            'total' => $totalSoal            
         ];
         return view('exercise/latihan', $data);
     }
@@ -84,7 +87,7 @@ class Exercise extends BaseController
             } else {
                 $data = [
                     'title' => 'Login Status',
-                    'login' => $this->loginModel->index()
+                    'login' => $this->loginModel->index(),                   
                 ];
                 return view('exercise/relogin', $data);
             }
