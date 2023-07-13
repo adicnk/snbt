@@ -109,6 +109,15 @@ class Latihan extends BaseController
                     'salah' => $salah
                 ]);
 
+                session()->set('soalBenar', $benar);
+                session()->set('soalSalah', $salah);
+                session()->set('soalDiisi', $diisi);
+                session()->set('soalKosong', $kosong);
+                session()->set('soalScore', $score);
+                session()->set('soalTotal', $totalSoal);
+                session()->set('soalArr', $soalArr);
+                session()->set('jawabanSoal', $answer);
+
                 $data = [
                     'title' => "Score Latihan Soal",
                     'benar' => $benar,

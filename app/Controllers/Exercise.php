@@ -197,4 +197,14 @@ class Exercise extends BaseController
     ];
         return view('exercise/latihan-fp',$data);
     }
+
+    public function review()
+    {        
+        $data = [
+            'boxNumber' => 0
+        ];
+
+        return view('exercise/selesai-review',$data);
+    }
+
 }

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="../favicon.ico">
     <title>
-        Belajar Yuk - Score Latihan
+        Belajar Yuk - Review Jawaban
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <link rel="stylesheet" type="text/css" href="../../css/custom.css" />
     <!-- Nucleo Icons -->
     <link href="../../../material_assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../../../material_assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -76,25 +77,6 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
     <script type="text/javascript" src="../../../material_assets/js/kuma-gauge.jquery.js"></script>
-
-    <script>
-        $(document).ready(
-            function scored() {
-                $('.but').trigger('click');
-
-                $('.js-score').kumaGauge({
-                    // value: Math.floor((Math.random() * 99) + 1)
-                    value: <?= $score ?>
-                });
-
-                if (<?= $score ?> < <?= $nilaiMin ?>) {
-                    $("#score-desc").html("ANDA TIDAK LULUS");
-                } else {
-                    $("#score-desc").html("ANDA LULUS");
-                }
-            }
-        );
-    </script>
 
 </body>
 

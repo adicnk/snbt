@@ -76,7 +76,7 @@
 
     <script>
         function urlBrowserChange() {
-            alert();
+            //alert();
             history.pushState("object or string representing the state of the page", "Score Latihan - PAIT", "/latihan/selesai");
         }
 

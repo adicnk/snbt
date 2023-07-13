@@ -81,6 +81,7 @@
             <div class="row mt-3 mb-3">
                 <div class="col md-6">
                     <a href="../../dashboard" class="btn btn-success mt-3 ml-4 font-weight-bolder">Kembali ke Dashboard</a>
+                    <a href="../../review" class="btn btn-warning mt-3 ml-4 font-weight-bolder">Review Jawaban</a>
                 </div>
             </div>
         </div>

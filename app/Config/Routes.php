@@ -43,6 +43,7 @@ $routes->get('submit/admin', 'Submit::admin');
 $routes->get('submitedit/admin/(:num)', 'Submit::admin/$1');
 $routes->get('submit/soal', 'Submit::soal');
 $routes->get('submitEdit/soal/(:num)', 'Submit::soal/$1');
+$routes->get('/submit/review', 'Review::index');
 
 $routes->get('delete/admin/(:num)', 'Delete::user/$1');
 $routes->get('delete/soal/(:num)', 'Delete::soal/$1');
@@ -59,7 +60,7 @@ $routes->get('/belajar', 'Exercise::belajar');
 $routes->get('/profile', 'Exercise::profile');
 $routes->get('/about', 'Exercise::about');
 $routes->get('/info', 'Exercise::info');
-
+$routes->get('/review', 'Exercise::review');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

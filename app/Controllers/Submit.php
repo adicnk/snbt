@@ -185,4 +185,15 @@ class Submit extends BaseController
             }
         }
     }
+
+    public function review(){
+        $boxNumber = $this->request->getVar('boxnumber');
+        //return redirect()->to('../review');
+        $data = [
+            'boxNumber' => $boxNumber
+        ];
+
+        return view('exercise/selesai-review',$data);
+
+    }
 }
