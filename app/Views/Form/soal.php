@@ -23,6 +23,7 @@
         <div class="card-block mt-3">
             <div class="card-text text-center">
 
+            
                 <form method="post" action="../submit/soal" enctype="multipart/form-data">
                     <?= csrf_field() ?>
 
@@ -32,7 +33,9 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Kategori</strong></div>
                                     <select class="form-control" name="kategoriSoal" id="kategoriSoal" onfocusin="yellowin(this);" onfocusout="whiteout(this)">
-                                        <option value=1>Skolastik</option>
+                                    <?php foreach ($kategori_soal as $ks) : ?>
+                                        <option value=<?= $ks['id']?> <?=$ks['id']==1 ? 'selected>':'' ?><?= $ks['kname']?></option>
+                                    <?php endforeach ?>
                                     </select>
                                 </div>
                             </div>
@@ -171,12 +174,18 @@
                         </div>
 
                         <div class="form-row align-items-right mt-5">
-                            <div class="col-4">
+                            <div class="col-10">
                                 <div class="input-group-prepend">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="isChoosen" id="isChoosen">
                                         <label class="form-check-label" for="isChoosen">
-                                            Soal ini dipilih masuk ke latihan ujian
+                                            Soal ini masuk ke latihan ujian &nbsp;
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="isDP" id="isDP">
+                                        <label class="form-check-label" for="isDP">
+                                            Soal ini dengan pembahasan
                                         </label>
                                     </div>
                                 </div>
@@ -185,6 +194,7 @@
                     </div>
                     <button class="btn btn-lg btn-primary btn-block mt-3 mb-4" type="submit">SIMPAN</button>
                 </form>
+                
                 <a href="../admin/soal" class="btn btn-lg btn-danger btn-block mt-3 mb-4">CANCEL</a>
             </div>
         </div>

@@ -118,9 +118,24 @@ class SoalMDL extends Model
         $builder = $db->table('soal');
         $query = $builder->get();
         $index= 0;
+
+        $builder->where('id_tp',1);
+        $queryTP = $builder->get();
+        if ($queryTP==null){
+            $itp=null;
+        }
+
+        $this->where(['is_dp' => 1]);
+        $queryDP = $this->findAll();
+        if ($queryDP==null) {
+            $idp = null;
+        }
+
+        d($queryTP); dd($queryDP);
+
         foreach ($query->getResult() as $q){
-            $id = $q->id; 
-        
+            $id = $q->id; $idp = $q->is_dp; $itp=$q->is_tp;
+    
             $idx_new= $index+1;
             $builder->set('idx', $idx_new);
             $builder->where('id', $id);

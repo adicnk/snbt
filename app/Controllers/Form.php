@@ -3,14 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\UserMDL;
+use App\Models\KategoriMDL;
 
 class Form extends BaseController
 {
-    protected $userModel;
+    protected $userModel, $kategoriModel;
 
     public function __construct()
     {
         $this->userModel = new UserMDL();
+        $this->kategoriModel = new KategoriMDL();
     }
 
     public function admin()
@@ -27,7 +29,8 @@ class Form extends BaseController
     {
         // d($this->request->getVar('url'));
         $data = [
-            'title'   => "Form Soal"
+            'title'   => "Form Soal",
+            'kategori_soal' => $this->kategoriModel->findAll()
         ];
         return view('form/soal', $data);
     }

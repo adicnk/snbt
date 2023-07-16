@@ -33,7 +33,8 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><strong>Kategori</strong></div>
                                         <select class="form-control" name="kategoriSoal" id="kategoriSoal" onfocusin="yellowin(this);" onfocusout="whiteout(this)">
-                                            <option value=1 <?= $s['kategori_soal_id'] == 1 ? 'selected' : '' ?>>Skolastik</option>
+                                            <option value=1 <?= $s['kategori_soal_id'] == 1 ? 'selected' : '' ?>>Pengetahuan Kuantitatif</option>
+                                            <option value=1 <?= $s['kategori_soal_id'] == 2 ? 'selected' : '' ?>>Tes Kemampuan & Potensi Akademik</option>
                                         </select>
                                     </div>
                                 </div>

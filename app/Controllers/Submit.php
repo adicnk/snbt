@@ -102,6 +102,7 @@ class Submit extends BaseController
         $isAudio = $this->request->getVar('isAudio');
         $fileAudio = $this->request->getFile('fileAudio');
         $isChoosen = $this->request->getVar('isChoosen');
+        $isDP = $this->request->getVar('isDP');
 
         $namaGambar = null;
         $namaSuara = null;
@@ -134,8 +135,8 @@ class Submit extends BaseController
             'picture_url' => $namaGambar,
             'is_audio' => $isAudio == "on" ? 1 : null,
             'audio_url' => $namaSuara,
-            'is_choosen' => 1
-            //'is_choosen' => $isChoosen == "on" ? 1 : null
+            'is_choosen' => 1,
+            'is_DP' => $isDP == "on" ? 1 : null
         ]);
 
         //ID terakhir yg di buat di tabel soal
@@ -162,6 +163,7 @@ class Submit extends BaseController
             'jawaban_benar' => $this->request->getVar('jawabanBenar')
         ]);  
         
+        //Sorting Record by Kategori Soal
         $this->soalModel->reSortIdx();
 
         return redirect()->to('../admin/soal');
