@@ -136,7 +136,8 @@ class Submit extends BaseController
             'is_audio' => $isAudio == "on" ? 1 : null,
             'audio_url' => $namaSuara,
             'is_choosen' => 1,
-            'is_DP' => $isDP == "on" ? 1 : null
+            'is_dp' => $isDP == "on" ? 1 : null,
+            'is_tp' => $isDP == "on" ? null : 1
         ]);
 
         //ID terakhir yg di buat di tabel soal

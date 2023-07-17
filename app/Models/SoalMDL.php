@@ -10,7 +10,7 @@ class SoalMDL extends Model
     protected $useTimestamps = true;
 
     // Field yang boleh diisi waktu saving data ** harus didefinisikan dulu **
-    protected $allowedFields = ['name', 'idx', 'kategori_soal_id', 'is_picture', 'picture_url', 'is_audio', 'audio_url', 'is_choosen'];
+    protected $allowedFields = ['name', 'idx', 'kategori_soal_id', 'is_picture', 'picture_url', 'is_audio', 'audio_url', 'is_choosen', 'is_tp', 'is_dp'];
 
     public function searchSoal($keyword = false)
     {
@@ -116,33 +116,34 @@ class SoalMDL extends Model
     public function reSortIdx(){
         $db      = \Config\Database::connect();
         $builder = $db->table('soal');
+
+        $builder->where('is_tp',1);
         $query = $builder->get();
         $index= 0;
 
-        $builder->where('id_tp',1);
-        $queryTP = $builder->get();
-        if ($queryTP==null){
-            $itp=null;
-        }
-
-        $this->where(['is_dp' => 1]);
-        $queryDP = $this->findAll();
-        if ($queryDP==null) {
-            $idp = null;
-        }
-
-        d($queryTP); dd($queryDP);
-
         foreach ($query->getResult() as $q){
-            $id = $q->id; $idp = $q->is_dp; $itp=$q->is_tp;
-    
+            $id = $q->id;    
             $idx_new= $index+1;
             $builder->set('idx', $idx_new);
-            $builder->where('id', $id);
-        
+            $builder->where('id', $id);        
             $builder->update();
             $index++;
         }
+
+        $index=0;
+        $this->where(['is_dp' => 1]);
+        $queryDP = $this->findAll();
+        foreach ($queryDP as $q){
+            $id = $q['id'];    
+            $idx_new= $index+1;
+            $builder->set('idx', $idx_new);
+            $builder->where('id', $id);        
+            $builder->update();
+            d($id);
+            $index++;
+        }
+
+
     }
 
 }

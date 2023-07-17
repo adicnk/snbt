@@ -10,7 +10,7 @@ class ConfigMDL extends Model
     protected $useTimestamps = true;
 
     // Field yang boleh diisi waktu saving data ** harus didefinisikan dulu **
-    protected $allowedFields = ['total_soal_demo', 'total_soal_bronze', 'total_soal_silver', 'total_soal_diamond', 'total_soal_premuium'];
+    protected $allowedFields = ['total_soal', 'total_soal_demo', 'total_soal_bronze', 'total_soal_silver', 'total_soal_diamond', 'total_soal_premuium'];
 
     public function totalSoal($user)
     {
