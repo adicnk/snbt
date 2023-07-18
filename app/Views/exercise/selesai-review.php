@@ -96,7 +96,13 @@
                             echo "<br/>";
                         } ?>                        
             <?php    } ?>
-        </form>
+        </form><hr/>
+        <?php if($boxNumber>0) {
+            if ($s['is_dp']==1){
+                echo "<div>Pembahasan Ada Disini</div>";
+            }
+
+        } ?>
             </div>
             <div class="col">
             <?php 
