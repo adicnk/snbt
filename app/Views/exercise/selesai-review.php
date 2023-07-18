@@ -81,8 +81,8 @@
                     ?>
                         <input type="submit" id="boxnumber" name="boxnumber" class="
                         <?php
-                        $queryJawaban = $db->query("SELECT * FROM soal s INNER JOIN jawaban j ON s.id = j.soal_id WHERE s.idx=".$x);
-                        foreach ($queryJawaban->getResult('array') as $s) : ?>
+                        $queryJawaban = session()->get('soal');
+                        foreach ($queryJawaban as $s) : ?>
                         ?>
                         <?php if ($answer[$x-1]==$s['jawaban_benar']) {
                         echo "box-green";
@@ -103,9 +103,7 @@
                 if($boxNumber>0) 
                 { 
                     $answer = session()->get('jawabanArr');
-                    $queryJawaban = $db->query("SELECT * FROM soal s INNER JOIN jawaban j ON s.id = j.soal_id WHERE s.idx=".$boxNumber);
-                    //dd($queryJawaban->getResult('array'));
-                    foreach ($queryJawaban->getResult('array') as $s) : ?>
+                    $s =$queryJawaban[$boxNumber-1]; ?>
                         <div class="text-center">
                         <?php if ($s['is_picture'] == 1) : ?>
                             <img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="50%" alt="gambar_soal">
@@ -124,6 +122,10 @@
                         <form method="post" action="/latihan?id=<?= $s['idx']?>">
                         <h5 class="card-title">Soal No. <?= $s['idx'] ?></h5><hr/>
                             <?php
+                                if ($answer[strval($boxNumber)-1]==""){ ?>
+                            <h5 style="color:Green;"> Anda TIDAK MENJAWAB</h5>    
+                            <?php
+                                } else {
                                 if ($answer[strval($boxNumber)-1]==$s['jawaban_benar']) {
                             ?>
                             <h5 style="color:Green;">Jawaban Anda BENAR</h5>
@@ -145,7 +147,7 @@
                                     case 3: echo "C"; break;
                                     case 4: echo "D"; break;
                                     case 5: echo "E"; break;
-                                }?><hr/>
+                                }}?><hr/>
                                 </h6>
                             <p class="card-text"> <?= $s['name']; ?></p>
                             
@@ -185,9 +187,6 @@
                                 
                                 <?php } ?>
                             </ul>
-                <?php
-                    endforeach;
-                ?>
             </div>
             <?php } ?>
         
