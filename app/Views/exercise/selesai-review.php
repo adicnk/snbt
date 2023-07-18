@@ -98,10 +98,10 @@
             <?php    } ?>
         </form><hr/>
         <?php if($boxNumber>0) {
-            if ($s['is_dp']==1){
-                echo "<div>Pembahasan Ada Disini</div>";
-            }
-
+            if ($s['is_dp']==1){ ?>
+                <h5>Pembahasan Soal</h5>
+                <iframe src="https://belajaryuk.devinc.website/portfolio/pembahasan-soal-no-<?=$boxNumber ?>" width="100%" height="500px"></iframe>
+            <?php }  
         } ?>
             </div>
             <div class="col">
