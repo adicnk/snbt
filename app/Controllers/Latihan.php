@@ -31,7 +31,7 @@ class Latihan extends BaseController
 
             $user = $this->userModel->searhAdminID(session()->get('userID'));
             $totalSoal = $this->configModel->totalSoal($user);
-            $soal = $this->soalModel->isChoosen();
+            $soal = session()->get('soal');
             //$totalSoal = $this->configModel->totalSoal();
             $nilaiMin = $this->configModel->nilaiMinimum();
 

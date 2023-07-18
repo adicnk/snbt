@@ -79,6 +79,13 @@ class SoalMDL extends Model
         return $this->findAll();
     }
 
+    public function isDP()
+    {
+        $this->where(['is_dp' => 1]);
+        $this->join('jawaban', 'jawaban.soal_id = soal.id');
+        return $this->findAll();
+    }
+
     public function  isChoosenStatus($id) {
 
         $this->where(['id' => $id]);
