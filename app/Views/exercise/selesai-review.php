@@ -124,14 +124,14 @@
                             <?php
                                 if ($answer[strval($boxNumber)-1]==""){ ?>
                             <h5 style="color:Green;"> Anda TIDAK MENJAWAB</h5> 
-                            <h5>Jawaban yang benar adalah <?php                                 
+                            Jawaban yang benar adalah <?php                                 
                                 switch($s['jawaban_benar']) {
                                     case 1: echo "A"; break;
                                     case 2: echo "B"; break;
                                     case 3: echo "C"; break;
                                     case 4: echo "D"; break;
                                     case 5: echo "E"; break;
-                                }?></h5>   
+                                }?>   
                             <?php
                                 } else {
                                 if ($answer[strval($boxNumber)-1]==$s['jawaban_benar']) {
