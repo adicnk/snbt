@@ -115,7 +115,7 @@
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
-                            <a href="/latihan" class="nav-link text-body font-weight-bold px-0">
+                            <a href="/latihanfp" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-dumbbell me-sm-1"></i>
                                 Latihan Soal
                             </a>
