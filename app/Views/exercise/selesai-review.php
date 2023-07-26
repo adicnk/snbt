@@ -94,17 +94,19 @@
                         text-white font-weight-bold mr-2 mb-2" value="<?=$x?>"></input>
                         <?php if (fmod($x,10)==0) {
                             echo "<br/>";
-                        } ?>                        
+                        } ?> 
             <?php    } ?>
-        </form><hr/>
+        </form>
+        <br/><em>Klik kotak nomor diatas untuk jawaban soal yg benar</em>                       
+        <hr/>
         <?php if($boxNumber>0) {
             if ($s['is_dp']==1){ ?>
                 <h5>Pembahasan Soal</h5>
-                <iframe src="https://belajaryuk.devinc.website/portfolio/pembahasan-soal-no-<?=$boxNumber ?>" width="100%" height="500px"></iframe>
+                <iframe src="https://belajaryuk.devinc.website/portfolio/p-<?=$boxNumber ?>" width="100%" height="500px"></iframe>
             <?php }  
         } ?>
             </div>
-            <div class="col">
+            <div class="col-sm-6">
             <?php 
                 if($boxNumber>0) 
                 { 

@@ -7,10 +7,11 @@ use App\Models\SoalMDL;
 use App\Models\ChartPieMDL;
 use App\Models\ConfigMDL;
 use App\Models\LoginMDL;
+use App\Models\KategoriMDLnMDL;
 
 class Admin extends BaseController
 {
-    protected $userModel, $chartPieModel, $soalModel, $configModel, $loginModel;
+    protected $userModel, $chartPieModel, $soalModel, $configModel, $loginModel, $kategpriModel;
 
     public function __construct()
     {
@@ -19,6 +20,7 @@ class Admin extends BaseController
         $this->chartPieModel = new ChartPieMDL();
         $this->configModel = new ConfigMDL();
         $this->loginModel = new LoginMDL();
+        $this->kategoriModel = new KategoriMDL();
     }
 
     public function index($links = false)
@@ -147,7 +149,7 @@ class Admin extends BaseController
     public function soal()
     {
         $keyword = $this->request->getVar('keyword');
-        $user = $this->soalModel->searchSoal($keyword);
+        $soal = $this->soalModel->searchSoal($keyword);
         if ($keyword) {
             $title = 'Soal Name Search : "' . $keyword . '"';
         } else {
@@ -157,6 +159,7 @@ class Admin extends BaseController
         $data = [
             'title' => $title,
             'soal'  => $this->soalModel->paginate(5, 'soal'),
+            'kategori' => $this->kategpriModel->
             'pager' => $this->soalModel->pager,
             'currentPage' => $currentPage
         ];

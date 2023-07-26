@@ -32,7 +32,7 @@
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../admin">
                 <div class="sidebar-brand-text mx-3">
                     <img src="../favicon.ico" alt="main_logo" style="width:20%">
-                    PAIT Admin
+                    Belajar Yuk Admin
                 </div>
             </a>
 

@@ -39,7 +39,12 @@
                 </div>
                 <div class="text-center">
                     <?php if ($s['is_picture'] == 1) : ?>
-                        <img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="30%" alt="gambar_soal">
+                    <?php if ($s['is_tp']) {?>
+                        <iframe src="https://belajaryuk.devinc.website/package/soal-tp-<?= $noID ?>/" width="100%" height="215px"></iframe>
+                        <?php } else { ?>
+                            <iframe src="https://belajaryuk.devinc.website/package/soal-dp-<?= $noID ?>/" width="100%" height="100%"></iframe>
+                        <?php } ?>
+                        <!--<img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="30%" alt="gambar_soal"> -->
                     <?php endif ?>
                 </div>
                 <br />

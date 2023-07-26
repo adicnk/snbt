@@ -14,8 +14,9 @@
             ?>
             <h3>Account Demo</h3><hr/>
             <a href="/latihan?tp=1" type="button" class="btn btn-warning">Latihan Soal dengan Jawaban tanpa pembahasannya</a><br/>
+            <!--
             <a href="/latihan?tp=0" type="button" class="btn btn-secondary">Latihan Soal dengan Jawaban serta pembahasannya</a>
-                
+            -->    
         <?php break;
         case "bronze": ?>
                 

@@ -20,7 +20,17 @@
             <div class="col-4">
                 <form action="" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Masukkan Kategori" name="keyword">
+                        <!-- <input type="text" class="form-control" placeholder="Masukkan Kategori" name="keyword">-->
+
+                        <label for="cars">Pilih Kategari : </label>
+                        <select name="cars" id="cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        
+
                         <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
                     </div>
                 </form>
@@ -46,6 +56,7 @@
                     <?php
                     $index = 1 + (5 * ($currentPage - 1));
                     foreach ($soal as $s) :
+                        
                     ?>
                 <tr>
                     <td style="text-align: center"><?= $index ?></td>
