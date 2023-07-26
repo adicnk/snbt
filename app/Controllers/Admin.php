@@ -7,11 +7,11 @@ use App\Models\SoalMDL;
 use App\Models\ChartPieMDL;
 use App\Models\ConfigMDL;
 use App\Models\LoginMDL;
-use App\Models\KategoriMDLnMDL;
+use App\Models\KategoriMDL;
 
 class Admin extends BaseController
 {
-    protected $userModel, $chartPieModel, $soalModel, $configModel, $loginModel, $kategpriModel;
+    protected $userModel, $chartPieModel, $soalModel, $configModel, $loginModel, $kategoriModel;
 
     public function __construct()
     {
@@ -159,7 +159,7 @@ class Admin extends BaseController
         $data = [
             'title' => $title,
             'soal'  => $this->soalModel->paginate(5, 'soal'),
-            'kategori' => $this->kategpriModel->
+            'kategori' => $this->kategoriModel->findAll(),
             'pager' => $this->soalModel->pager,
             'currentPage' => $currentPage
         ];
