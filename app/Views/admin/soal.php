@@ -11,7 +11,6 @@
     </div>
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-        <h1 class="h3 mb-0 text-gray-800"> <?= $title; ?></h1>
     </div>
 
     <div>
@@ -20,17 +19,13 @@
             <div class="col-4">
                 <form action="" method="post">
                     <div class="input-group mb-3">
-                        <!-- <input type="text" class="form-control" placeholder="Masukkan Kategori" name="keyword">-->
-
-                        <label for="cars">Pilih Kategari : </label>
-                        <select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
+                        <!-- <input type="text" class="form-control" placeholder="Masukkan Kategori" name="keyword">-->                    
+                        <label for="kategori">Pilih Kategari : </label>
+                        <select name="kategori" id="kategori">
+                        <?php foreach ($kategori as $k) : ?>
+                            <option value=<?= $k['kname']?>><?= $k['kname']?></option>
+                        <?php endforeach?>
                         </select>
-                        
-
                         <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
                     </div>
                 </form>

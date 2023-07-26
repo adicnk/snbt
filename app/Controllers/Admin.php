@@ -68,25 +68,19 @@ class Admin extends BaseController
                     break;
 
                 case "soal":
-                    // d($this->request->getVar('keyword'));
-
                     // Search Block
-                    $keyword = $this->request->getVar('keyword');
-                    if ($keyword) {
-                        $user = $this->soalModel->searchSoal($keyword);
-                        $title = 'Soal Name Search : "' . $keyword . '"';
-                    } else {
-                        $soal = $this->soalModel->searchSoal();
-                        $title = "Soal List : All";
-                    }
+                    //$keyword = $this->request->getVar('keyword');
+                    $kategori = $this->request->getVar('kategori');
+                    $soal = $this->soalModel->searchSoal($kategori);
 
                     $currentPage = $this->request->getVar('page_soal') ? $this->request->getVar('page_soal') : 1;
                     $data = [
-                        'title' => $title,
                         'soal'  => $this->soalModel->paginate(5, 'soal'),
+                        'kategori' => $this->kategoriModel->findAll(),
                         'pager' => $this->soalModel->pager,
                         'currentPage' => $currentPage
                     ];
+                    
                     return view('admin/soal', $data);
                     break;
                 case 'dashboard':
@@ -148,16 +142,11 @@ class Admin extends BaseController
 
     public function soal()
     {
-        $keyword = $this->request->getVar('keyword');
-        $soal = $this->soalModel->searchSoal($keyword);
-        if ($keyword) {
-            $title = 'Soal Name Search : "' . $keyword . '"';
-        } else {
-            $title = 'Soal List : All';
-        }
+        //$keyword = $this->request->getVar('keyword');
+        $kategori = $this->request->getVar('kategori');
+        $soal = $this->soalModel->searchSoal($kategori);
         $currentPage = $this->request->getVar('page_soal') ? $this->request->getVar('page_soal') : 1;
         $data = [
-            'title' => $title,
             'soal'  => $this->soalModel->paginate(5, 'soal'),
             'kategori' => $this->kategoriModel->findAll(),
             'pager' => $this->soalModel->pager,
