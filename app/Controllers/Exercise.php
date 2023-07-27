@@ -40,16 +40,15 @@ class Exercise extends BaseController
         // Soal tp (tanpa pembahasan) dan dp (dengan pembahasan)        
         //$soal = $this->soalModel->isChoosen();
         //$soal = $this->soalModel->isChoosen();
-
-        $tp = $this->request->getVar('tp');
-        if ($tp==1) {
+        
+        $soalClass = $this->request->getVar('soalClass');
+        if ($soalClass==1) {
             $soal = $this->soalModel->isTP();
             
         } else {
             $soal = $this->soalModel->isDP();
-            //d($tp);
         }
-        //dd($soal);
+
         $totalSoal = $this->configModel->totalSoal($user);
         $no = $this->request->getVar('id');
         $soalArr = array_fill(0, $totalSoal, null);
@@ -58,7 +57,7 @@ class Exercise extends BaseController
         for ($x = 0; $x < $totalSoal; $x++) {
             $soalArr[$x]=$x+1;
         }
-
+        
         session()->set('noId', 1);
         session()->set('soalArr', $soalArr);
         session()->set('jawabanArr', $jawabanArr);
@@ -71,9 +70,10 @@ class Exercise extends BaseController
             'total' => $totalSoal,
             'paket' => $user            
         ];
+        
         return view('exercise/latihan', $data);
     }
-
+    
     public function login()
     {
         $usr = $this->request->getVar('username');

@@ -191,6 +191,12 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="./material_assets/js/material-dashboard.min.js?v=3.0.2"></script>
+
+    <script type="text/javascript">
+        function setSoalClass(catValue){
+            document.getElementById("soalClass").value = catValue;
+        }
+    </script>
 </body>
 
 </html>
