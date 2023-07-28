@@ -29,17 +29,18 @@ class LatihanPaket extends BaseController
         $user = $this->userModel->searhAdminID(session()->get('userID'));
         // Soal tp (tanpa pembahasan) dan dp (dengan pembahasan)        
         //$soal = $this->soalModel->isChoosen();
-        //$soal = $this->soalModel->isChoosen();
         
         $soalClass = $this->request->getVar('soalClass');
-        if ($soalClass==1) {
-            $soal = $this->soalModel->isTP();
-            
-        } else {
-            $soal = $this->soalModel->isDP();
+        switch ($soalClass) {
+            case 1:
+            $soal = $this->soalModel->soalBuilder(1);
+            $totalSoal = $this->request->getVar('totalSoal');
+            break;
+        case 0:
+            $soal = $this->soalModel->soalBuilder(2);
         }
 
-        $totalSoal = $this->configModel->totalSoal($user);
+        //$totalSoal = $this->configModel->totalSoal($user);
         $no = $this->request->getVar('id');
         $soalArr = array_fill(0, $totalSoal, null);
         $jawabanArr = array_fill(0, $totalSoal, null);

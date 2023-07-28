@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PAIT Administrator</title>
+    <title>Belajar Yuk Administrator</title>
 
     <!-- Custom fonts for this template-->
     <link href="../../admin_assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

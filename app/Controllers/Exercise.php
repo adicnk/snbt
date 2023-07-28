@@ -47,7 +47,7 @@ class Exercise extends BaseController
             
         } else {
             $soal = $this->soalModel->isDP();
-        }
+        }        
 
         $totalSoal = $this->configModel->totalSoal($user);
         $no = $this->request->getVar('id');

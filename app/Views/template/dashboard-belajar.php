@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php $db = \Config\Database::connect(); ?>
 
 <head>
     <meta charset="utf-8" />
@@ -195,6 +196,7 @@
     <script type="text/javascript">
         function setSoalClass(catValue){
             document.getElementById("soalClass").value = catValue;
+            document.getElementById("totalSpal").value = <?= $this->configModel->totalSoal($user); ?>;
         }
     </script>
 </body>
