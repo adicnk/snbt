@@ -8,10 +8,11 @@ use App\Models\SoalMDL;
 use App\Models\JawabanMDL;
 use App\Models\LatihanMDL;
 use App\Models\ConfigMDL;
+use App\Models\UserSubcribeMDL;
 
 class LatihanPaket extends BaseController
 {
-    protected $userModel, $loginModel, $soalModel, $jawabanModel, $latihanModel, $configModel;
+    protected $userModel, $loginModel, $soalModel, $jawabanModel, $latihanModel, $configModel, $userSubcribeModel;
 
     public function __construct()
     {
@@ -21,6 +22,7 @@ class LatihanPaket extends BaseController
         $this->jawabanModel = new JawabanMDL();
         $this->latihanModel = new LatihanMDL();
         $this->configModel = new ConfigMDL();
+        $this->userSubcribeModel = new UserSubcribeMDL();
     }
 
     public function index()
@@ -34,7 +36,6 @@ class LatihanPaket extends BaseController
         switch ($soalClass) {
             case 1:
             $soal = $this->soalModel->soalBuilder(1);
-            $totalSoal = $this->request->getVar('totalSoal');
             break;
         case 0:
             $soal = $this->soalModel->soalBuilder(2);

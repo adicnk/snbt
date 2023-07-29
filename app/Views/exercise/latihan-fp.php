@@ -32,7 +32,6 @@
             <?php break;
 }} ?>
             <input type="hidden" id="soalClass" name="soalClass">
-            <input type="hidden" id="totalSoal" name="totalSoal">
             </form>
             </div>
             <div class="card-footer">

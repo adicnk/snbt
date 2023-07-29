@@ -196,7 +196,6 @@
     <script type="text/javascript">
         function setSoalClass(catValue){
             document.getElementById("soalClass").value = catValue;
-            document.getElementById("totalSpal").value = <?= $this->configModel->totalSoal($user); ?>;
         }
     </script>
 </body>
