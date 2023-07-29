@@ -1,6 +1,8 @@
 <?= $this->extend('template/dashboard-belajar') ?>
 <?= $this->section('content') ?>
 
+<?php $db = \Config\Database::connect(); ?>
+
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
@@ -17,8 +19,18 @@
                             case "demo": 
                                 ?>
             <h3>Account Demo</h3><hr/>
-            <button type="submit" onclick="setSoalClass(1)"  class="btn btn-warning">Latihan Soal dengan Jawaban tanpa pembahasannya</button><br/>
-            <button type="submit" onclick="setSoalClass(0)"  class="btn btn-secondary">Latihan Soal dengan Jawaban serta pembahasannya</button><br/>
+            <h5>Latihan Soal dengan Jawaban Tanpa Pembahasan</h5>
+            <?php $queryClass = $db->table('kategori_soal')->getWhere(['is_tp' => 1]);
+            foreach ($queryClass->getResult('array') as $k) : ?>
+            <button type="submit" onclick="setSoalClass(1)"  class="btn btn-warning"><?=$k['kname']?></button><br/>
+            <?php endforeach ?>
+            <br/>
+            <h5>Latihan Soal dengan Jawaban Dengan Pembahasan</h5>
+            <?php $queryClass = $db->table('kategori_soal')->getWhere(['is_tp' => null]);
+            foreach ($queryClass->getResult('array') as $k) : ?>
+            <button type="submit" onclick="setSoalClass(1)"  class="btn btn-warning"><?=$k['kname']?></button><br/>
+            <?php endforeach ?>
+            
                 
         <?php break;
         case "bronze": ?>

@@ -8,11 +8,12 @@ use App\Models\JawabanMDL;
 use App\Models\LatihanMDL;
 use App\Models\LoginMDL;
 use App\Models\UserMDL;
+use App\Models\UserSubcribeMDL;
 
 class Exercise extends BaseController
 {
 
-    protected $soalModel, $configModel, $jawabanModel, $latihanModel, $loginModel, $userModel;
+    protected $soalModel, $configModel, $jawabanModel, $latihanModel, $loginModel, $userModel, $userSubcribeModel;
 
     public function __construct()
     {
@@ -22,6 +23,7 @@ class Exercise extends BaseController
         $this->latihanModel = new LatihanMDL();
         $this->loginModel = new LoginMDL();
         $this->userModel = new UserMDL();
+        $this->userSubcribeModel = new UserSubcribeMDL();
     }
 
     public function index()
@@ -41,15 +43,25 @@ class Exercise extends BaseController
         //$soal = $this->soalModel->isChoosen();
         //$soal = $this->soalModel->isChoosen();
         
-        $soalClass = $this->request->getVar('soalClass');
-        if ($soalClass==1) {
-            $soal = $this->soalModel->isTP();
-            
-        } else {
-            $soal = $this->soalModel->isDP();
-        }        
+        foreach ($user as $u) :
+            switch ($u['paket']) {
+                case 'demo':                    
+                    $totalSoal=$this->userSubcribeModel->totalSoal(1);
+                    break;                
+            }
+        endforeach;
 
-        $totalSoal = $this->configModel->totalSoal($user);
+        $soalClass = $this->request->getVar('soalClass');
+        switch ($soalClass) {
+            case 1:
+                $soal = $this->soalModel->soalBuilder(1);
+                break;
+            case 0:
+                $soal = $this->soalModel->soalBuilder(2);
+                break;
+        }
+
+        //$totalSoal = $this->configModel->totalSoal($user);
         $no = $this->request->getVar('id');
         $soalArr = array_fill(0, $totalSoal, null);
         $jawabanArr = array_fill(0, $totalSoal, null);

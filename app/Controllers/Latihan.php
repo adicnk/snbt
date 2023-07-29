@@ -7,13 +7,13 @@ use App\Models\SoalMDL;
 use App\Models\JawabanMDL;
 use App\Models\LatihanMDL;
 use App\Models\UserMDL;
-
+use App\Models\UserSubcribeMDL;
 use CodeIgniter\I18n\Time;
 
 class Latihan extends BaseController
 {
 
-    protected $soalModel, $configModel, $jawabanModel, $latihanModel, $userModel;
+    protected $soalModel, $configModel, $jawabanModel, $latihanModel, $userModel, $userSubcribeModel;
 
     public function __construct()
     {
@@ -22,6 +22,7 @@ class Latihan extends BaseController
         $this->configModel = new ConfigMDL();
         $this->latihanModel = new LatihanMDL();
         $this->userModel = new UserMDL();
+        $this->userSubcribeModel = new UserSubcribeMDL();
     }
 
     public function index()
@@ -30,9 +31,29 @@ class Latihan extends BaseController
         if (!session()->get('isFinish')) {                                            
 
             $user = $this->userModel->searhAdminID(session()->get('userID'));
-            $totalSoal = $this->configModel->totalSoal($user);
-            $soal = session()->get('soal');
+            //$totalSoal = $this->configModel->totalSoal($user);
+            //$soal = session()->get('soal');
             //$totalSoal = $this->configModel->totalSoal();
+
+            foreach ($user as $u) :
+                switch ($u['paket']) {
+                    case 'demo':                    
+                        $totalSoal=$this->userSubcribeModel->totalSoal(1);
+                        break;                
+                }
+            endforeach;
+    
+            $soalClass = $this->request->getVar('soalClass');
+            switch ($soalClass) {
+                case 1:
+                    $soal = $this->soalModel->soalBuilder(1);
+                    break;
+                case 0:
+                    $soal = $this->soalModel->soalBuilder(2);
+                    break;
+            }
+    
+
             $nilaiMin = $this->configModel->nilaiMinimum();
 
             $soalArr = session()->get('soalArr');

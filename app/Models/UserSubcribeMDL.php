@@ -13,7 +13,7 @@ class UserSubcribeMDL extends Model
     protected $allowedFields = ['subcribe_id', 'kategpri_soal_id', 'total'];
 
     public function totalSoal($id){
-        $this->where('subcribe_id' => $id);
+        $this->where(['subcribe_id' => $id]);
         $this->join('kategori_soal', 'kategori_soal.id = kategori_soal_id', 'left');
         $query = $this->findAll();
         foreach ($query as $q){
