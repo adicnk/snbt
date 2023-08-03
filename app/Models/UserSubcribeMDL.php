@@ -10,7 +10,7 @@ class UserSubcribeMDL extends Model
     protected $useTimestamps = true;
 
     // Field yang boleh diisi waktu saving data ** harus didefinisikan dulu **
-    protected $allowedFields = ['subcribe_id', 'kategpri_soal_id', 'total'];
+    protected $allowedFields = ['user_id', 'subcribe_id', 'kategpri_soal_id', 'total'];
 
     public function totalSoal($id){
         $this->where(['subcribe_id' => $id]);

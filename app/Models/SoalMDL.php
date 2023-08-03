@@ -20,7 +20,7 @@ class SoalMDL extends Model
         }
         $this->table('soal');
         $this->join('kategori_soal', 'soal.kategori_soal_id = kategori_soal.id');
-        return  $this->like('kname', $keyword);
+        return  $this->like('kategori_soal_id', $keyword);
     }
 
     public function searchSoalID($id)
@@ -128,12 +128,32 @@ class SoalMDL extends Model
 
     public function reSortIdx(){
         $db      = \Config\Database::connect();
+        $builder = $db->table('kategori_soal');
+    
+        $query = $builder->get();
+        
+        foreach ($query->getResult() as $q){
+            $index=0;
+            $querySort=$this->findAll();
+            foreach ($querySort as $qs) :
+                $id = $qs->id;    
+                $idx_new= $index+1;
+                $builder->set('idx', $idx_new);
+                $builder->where('id', $id);        
+                $builder->update();
+                $index++;
+            endforeach; 
+        }
+    }
+    
+    public function sortTPDP(){
+        $db      = \Config\Database::connect();
         $builder = $db->table('soal');
-
+    
         $builder->where('is_tp',1);
         $query = $builder->get();
         $index= 0;
-
+    
         foreach ($query->getResult() as $q){
             $id = $q->id;    
             $idx_new= $index+1;
@@ -142,7 +162,7 @@ class SoalMDL extends Model
             $builder->update();
             $index++;
         }
-
+    
         $index=0;
         $this->where(['is_dp' => 1]);
         $queryDP = $this->findAll();
@@ -155,8 +175,5 @@ class SoalMDL extends Model
             d($id);
             $index++;
         }
-
-
     }
-
 }

@@ -23,7 +23,7 @@
                         <label for="kategori">Pilih Kategari : </label>
                         <select name="kategori" id="kategori">
                         <?php foreach ($kategori as $k) : ?>
-                            <option value=<?= $k['kname']?>><?= $k['kname']?></option>
+                            <option value=<?= $k['id']?>><?= $k['kname']?></option>
                         <?php endforeach?>
                         </select>
                         <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
