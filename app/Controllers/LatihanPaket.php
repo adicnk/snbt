@@ -35,7 +35,7 @@ class LatihanPaket extends BaseController
         foreach ($user as $u) :
             switch ($u['paket']) {
                 case 'demo':                    
-                    d($soalClass);
+                    //d($soalClass);
                     $totalSoal=$this->userSubcribeModel->totalSoal(1,$soalClass);
                     break;                
             }
