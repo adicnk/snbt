@@ -35,25 +35,17 @@ class Latihan extends BaseController
             //$soal = session()->get('soal');
             //$totalSoal = $this->configModel->totalSoal();
 
+            $soalClass=(int) session()->get('soalClass');
             foreach ($user as $u) :
                 switch ($u['paket']) {
                     case 'demo':                    
-                        $totalSoal=$this->userSubcribeModel->totalSoal(1);
+                        $totalSoal=$this->userSubcribeModel->totalSoal($soalClass);
                         break;                
                 }
             endforeach;
-    
-            $soalClass = $this->request->getVar('soalClass');
-            switch ($soalClass) {
-                case 1:
-                    $soal = $this->soalModel->soalBuilder(1);
-                    break;
-                case 0:
-                    $soal = $this->soalModel->soalBuilder(2);
-                    break;
-            }
-    
 
+            $soal = $this->soalModel->soalBuilder($soalClass,$totalSoal);
+    
             $nilaiMin = $this->configModel->nilaiMinimum();
 
             $soalArr = session()->get('soalArr');

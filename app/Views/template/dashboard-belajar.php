@@ -197,6 +197,7 @@
         function setSoalClass(catValue){
             document.getElementById("soalClass").value = catValue;
         }
+
     </script>
 </body>
 

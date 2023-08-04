@@ -52,14 +52,9 @@ class Exercise extends BaseController
         endforeach;
 
         $soalClass = $this->request->getVar('soalClass');
-        switch ($soalClass) {
-            case 1:
-                $soal = $this->soalModel->soalBuilder(1);
-                break;
-            case 0:
-                $soal = $this->soalModel->soalBuilder(2);
-                break;
-        }
+        $soal = $this->soalModel->soalBuilder($soalClass);
+
+        dd($soalClass);
 
         //$totalSoal = $this->configModel->totalSoal($user);
         $no = $this->request->getVar('id');

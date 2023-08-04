@@ -12,9 +12,9 @@ class UserSubcribeMDL extends Model
     // Field yang boleh diisi waktu saving data ** harus didefinisikan dulu **
     protected $allowedFields = ['user_id', 'subcribe_id', 'kategpri_soal_id', 'total'];
 
-    public function totalSoal($id){
-        $this->where(['subcribe_id' => $id]);
-        $this->join('kategori_soal', 'kategori_soal.id = kategori_soal_id', 'left');
+    public function totalSoal($user,$cat){
+        $this->where(['subcribe_id' => $user]);
+        $this->where(['kategori_soal_id' => $cat]);
         $query = $this->findAll();
         foreach ($query as $q){
             return $q['total'];

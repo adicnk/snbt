@@ -100,9 +100,10 @@ class SoalMDL extends Model
 
     }
 
-    public function soalBuilder($kategori){
+    public function soalBuilder($kategori,$limit){
         $this->where(['kategori_soal_id' => $kategori]);
         $this->join('jawaban', 'jawaban.soal_id = soal.id');
+        $this->limit((int)$limit);
         return $this->findAll();        
     }
 

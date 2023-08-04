@@ -31,25 +31,19 @@ class LatihanPaket extends BaseController
         $user = $this->userModel->searhAdminID(session()->get('userID'));
         // Soal tp (tanpa pembahasan) dan dp (dengan pembahasan)        
         //$soal = $this->soalModel->isChoosen();
+        $soalClass = $this->request->getVar('soalClass');
         foreach ($user as $u) :
             switch ($u['paket']) {
                 case 'demo':                    
-                    $totalSoal=$this->userSubcribeModel->totalSoal(1);
+                    d($soalClass);
+                    $totalSoal=$this->userSubcribeModel->totalSoal(1,$soalClass);
                     break;                
             }
         endforeach;
 
-        $soalClass = $this->request->getVar('soalClass');
-        switch ($soalClass) {
-            case 1:
-            $soal = $this->soalModel->soalBuilder(1);
-            break;
-        case 0:
-            $soal = $this->soalModel->soalBuilder(2);
-        }
+        $soal = $this->soalModel->soalBuilder($soalClass,$totalSoal);
 
         //$totalSoal = $this->configModel->totalSoal($user);
-
         $no = $this->request->getVar('id');
         $soalArr = array_fill(0, $totalSoal, null);
         $jawabanArr = array_fill(0, $totalSoal, null);
@@ -62,6 +56,7 @@ class LatihanPaket extends BaseController
         session()->set('soalArr', $soalArr);
         session()->set('jawabanArr', $jawabanArr);
         session()->set('soal', $soal);
+        session()->set('soalClass', $soal);
 
         $data = [
             'title' => "Latihan Soal",
