@@ -26,7 +26,8 @@
                             $query = $db->table('kategori_soal')->getWhere(['id' => $s['kategori_soal_id']]);
                             foreach ($query->getResult('array') as $q) :
                             ?>
-                                <?= $q['kname']; ?>
+                                <?= $q['kname']; 
+                                $wp_slug=$q['wp_slug'];?>
                             <?php endforeach ?>
                         </h6>
                     </nav>
@@ -40,7 +41,7 @@
                 <div class="text-center">
                     <?php if ($s['is_picture'] == 1) : ?>
                     <?php if ($s['is_tp']) {?>
-                        <iframe src="https://belajaryuk.devinc.website/package/soal-tp-<?= $noID ?>/" width="100%" height="215px"></iframe>
+                        <iframe src="https://belajaryuk.devinc.website/package/soal-<?=$wp_slug;?>-<?= $noID ?>/" width="100%" height="215px"></iframe>
                         <?php } else { ?>
                             <iframe src="https://belajaryuk.devinc.website/package/soal-dp-<?= $noID ?>/" width="100%" height="100%"></iframe>
                         <?php } ?>

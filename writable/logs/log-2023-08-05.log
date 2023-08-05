@@ -224,3 +224,61 @@ CRITICAL - 2023-08-05 07:42:12 --> Too few arguments to function App\Models\User
 #4 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #6 {main}
+CRITICAL - 2023-08-05 14:13:08 --> Undefined variable $totalSoal
+#0 C:\xampp\htdocs\snbt\app\Controllers\Latihan.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 47)
+#1 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\Latihan->index()
+#2 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Latihan))
+#3 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2023-08-05 14:13:08 --> Undefined variable $totalSoal
+#0 C:\xampp\htdocs\snbt\app\Controllers\Latihan.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 47)
+#1 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\Latihan->index()
+#2 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Latihan))
+#3 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2023-08-05 14:14:53 --> Too few arguments to function App\Models\UserSubcribeMDL::totalSoal(), 1 passed in C:\xampp\htdocs\snbt\app\Controllers\Exercise.php on line 49 and exactly 2 expected
+#0 C:\xampp\htdocs\snbt\app\Controllers\Exercise.php(49): App\Models\UserSubcribeMDL->totalSoal(1)
+#1 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\Exercise->soal()
+#2 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Exercise))
+#3 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2023-08-05 19:24:47 --> Undefined array key "wp_slug"
+#0 C:\xampp\htdocs\snbt\app\Views\exercise\latihan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 43)
+#1 C:\xampp\htdocs\snbt\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\snbt\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\snbt\system\Common.php(1089): CodeIgniter\View\View->render('exercise/latiha...', Array, true)
+#4 C:\xampp\htdocs\snbt\app\Controllers\LatihanPaket.php(69): view('exercise/latiha...', Array)
+#5 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\LatihanPaket->index()
+#6 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LatihanPaket))
+#7 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2023-08-05 19:30:15 --> Undefined constant "q"
+#0 C:\xampp\htdocs\snbt\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\snbt\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\snbt\system\Common.php(1089): CodeIgniter\View\View->render('exercise/latiha...', Array, true)
+#3 C:\xampp\htdocs\snbt\app\Controllers\LatihanPaket.php(69): view('exercise/latiha...', Array)
+#4 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\LatihanPaket->index()
+#5 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LatihanPaket))
+#6 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2023-08-05 19:30:15 --> Undefined constant "q"
+#0 C:\xampp\htdocs\snbt\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\snbt\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\snbt\system\Common.php(1089): CodeIgniter\View\View->render('exercise/latiha...', Array, true)
+#3 C:\xampp\htdocs\snbt\app\Controllers\LatihanPaket.php(69): view('exercise/latiha...', Array)
+#4 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\LatihanPaket->index()
+#5 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LatihanPaket))
+#6 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
