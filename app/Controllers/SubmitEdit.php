@@ -85,7 +85,7 @@ class SubmitEdit extends BaseController
             if ($isPicture) {   
                 if ($namaGambar==""){             
                     $namaGambar = $fileGambar->getName();
-                    $fileGambar->move('img');
+                    //$fileGambar->move('img');
                 }                
             } else {
                 $namaGambar = null;

@@ -198,3 +198,29 @@ CRITICAL - 2023-08-05 02:27:15 --> array_fill(): Passing null to parameter #2 ($
 #5 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #6 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #7 {main}
+CRITICAL - 2023-08-05 07:28:41 --> The original file is not a valid file.
+#0 C:\xampp\htdocs\snbt\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\xampp\htdocs\snbt\app\Controllers\SubmitEdit.php(88): CodeIgniter\HTTP\Files\UploadedFile->move('img/')
+#2 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\SubmitEdit->soal('61')
+#3 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubmitEdit))
+#4 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2023-08-05 07:33:55 --> The original file is not a valid file.
+#0 C:\xampp\htdocs\snbt\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\xampp\htdocs\snbt\app\Controllers\SubmitEdit.php(88): CodeIgniter\HTTP\Files\UploadedFile->move('img/')
+#2 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\SubmitEdit->soal('61')
+#3 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubmitEdit))
+#4 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2023-08-05 07:42:12 --> Too few arguments to function App\Models\UserSubcribeMDL::totalSoal(), 1 passed in C:\xampp\htdocs\snbt\app\Controllers\Latihan.php on line 42 and exactly 2 expected
+#0 C:\xampp\htdocs\snbt\app\Controllers\Latihan.php(42): App\Models\UserSubcribeMDL->totalSoal(1)
+#1 C:\xampp\htdocs\snbt\system\CodeIgniter.php(832): App\Controllers\Latihan->index()
+#2 C:\xampp\htdocs\snbt\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Latihan))
+#3 C:\xampp\htdocs\snbt\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\snbt\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\snbt\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
