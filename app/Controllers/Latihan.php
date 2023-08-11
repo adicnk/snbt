@@ -27,24 +27,33 @@ class Latihan extends BaseController
 
     public function index()
     {     
-
+        
         if (!session()->get('isFinish')) {                                            
-
+            
             $user = $this->userModel->searhAdminID(session()->get('userID'));
             //$totalSoal = $this->configModel->totalSoal($user);
             //$soal = session()->get('soal');
             //$totalSoal = $this->configModel->totalSoal();
 
+            $totalSoal=null;
+            
             $soalClass=(int) session()->get('soalClass');
             foreach ($user as $u) :
                 switch ($u['paket']) {
                     case 'demo':                    
                         $totalSoal=$this->userSubcribeModel->totalSoal(1,$soalClass);
                         break;                
-                }
-            endforeach;
-
-            $soal = $this->soalModel->soalBuilder($soalClass,$totalSoal);
+                    }
+                endforeach;
+                
+                if (!$totalSoal):
+                    $data = [
+                        'title' => "USER LOGIN"
+                    ];
+                    session()->destroy();
+                    return view('exercise/login', $data);            
+                endif;
+                $soal = $this->soalModel->soalBuilder($soalClass,$totalSoal);
     
             $nilaiMin = $this->configModel->nilaiMinimum();
 
@@ -117,6 +126,7 @@ class Latihan extends BaseController
                 $latihanID = session()->get('latihanID');
                 $this->latihanModel->save([
                     'id' => $latihanID,
+                    'kategori_soal_id' => $this->soalModel->getKategoriSoal(),
                     'score' => $score,
                     'benar' => $benar,
                     'salah' => $salah

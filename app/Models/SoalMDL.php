@@ -100,6 +100,13 @@ class SoalMDL extends Model
 
     }
 
+    public function getKategoriSoal(){
+        $query= $this->findAll();
+        foreach ($query as $q){
+            return $q['kategori_soal_id'];
+        }
+    }
+
     public function soalBuilder($kategori,$limit){
         $this->where(['kategori_soal_id' => $kategori]);
         $this->join('jawaban', 'jawaban.soal_id = soal.id');

@@ -10,7 +10,7 @@ class LatihanMDL extends Model
     protected $useTimestamps = true;
 
     // Field yang boleh diisi waktu saving data ** harus didefinisikan dulu **
-    protected $allowedFields = ['date', 'user_id', 'benar', 'salah', 'score'];
+    protected $allowedFields = ['kategori_soal_id', 'date', 'user_id', 'benar', 'salah', 'score'];
 
     public function findAllID($id)
     {
@@ -46,7 +46,7 @@ class LatihanMDL extends Model
     public function countLatihan($id)
     {
         $this->where(['user_id' => $id]);
-        return $this->countAllResults();
+        return $this->countAll();
     }
 
     public function lastLatihan($id)

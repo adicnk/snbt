@@ -114,13 +114,30 @@ class Exercise extends BaseController
 
     public function dashboard()
     {
+        if (session()->start==false):
+            session()->set('start', true);
+            $start=0;
+            if ($start==1) :
+                $data = [
+                    'title' => "USER LOGIN"
+                ];
+                session()->destroy();
+                return view('exercise/login', $data);            
+            endif;
+        endif;
+
         $userID = session()->get('userID');
         session()->set('isFinish', false);
         $totalLatihan = $this->latihanModel->countLatihan($userID);
         $benar = $this->latihanModel->lastBenar($userID);
         $salah = $this->latihanModel->lastSalah($userID);
         $score = $this->latihanModel->lastScore($userID);
-
+        
+        if ($totalLatihan==0 AND session()->start):
+            session()->set('start', false);
+            $start=1;
+        endif;
+        
         if ($totalLatihan > 1) {
             $benarBefore = $this->latihanModel->benarBefore($userID);
             $persenBenar = ($benar - $benarBefore);
