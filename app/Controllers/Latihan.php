@@ -34,8 +34,6 @@ class Latihan extends BaseController
             //$totalSoal = $this->configModel->totalSoal($user);
             //$soal = session()->get('soal');
             //$totalSoal = $this->configModel->totalSoal();
-
-            $totalSoal=null;
             
             $soalClass=(int) session()->get('soalClass');
             foreach ($user as $u) :
@@ -126,7 +124,7 @@ class Latihan extends BaseController
                 $latihanID = session()->get('latihanID');
                 $this->latihanModel->save([
                     'id' => $latihanID,
-                    'kategori_soal_id' => $this->soalModel->getKategoriSoal(),
+                    'kategori_soal_id' => $this->soalModel->soalClass,
                     'score' => $score,
                     'benar' => $benar,
                     'salah' => $salah
