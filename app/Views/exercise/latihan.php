@@ -102,7 +102,7 @@
                             <li class="list-group-item"><b>A. </b>
                                 <label>
                                     <input name="jawabanA" id="jawabanA" type="radio" onclick="pilihan(1)" />
-                                    <span><?= $s['jawabanA']; ?></span>
+                                    <span><?= $s['jawabanA']==0 ? 0 : $s['jawabanA']; ?></span>
                                 </label>
                             </li>
                             <li class="list-group-item"><b>B. </b>

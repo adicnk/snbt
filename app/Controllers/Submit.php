@@ -109,7 +109,7 @@ class Submit extends BaseController
 
         if ($fileGambar) :
             // Pindahkan file ke folder gambar
-            $fileGambar->move('img');
+            //$fileGambar->move('img');
             // Ambil nama file
             if ($isPicture) {
                 $namaGambar = $fileGambar->getName();

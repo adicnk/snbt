@@ -90,7 +90,7 @@ class SubmitEdit extends BaseController
             } else {
                 $namaGambar = null;
             }
-            d($namaGambar);
+            //d($namaGambar);
         if ($fileAudio) :
             $fileAudio->move('aud');
             if ($isAudio) {
@@ -133,6 +133,10 @@ class SubmitEdit extends BaseController
             'jawabanE' => $this->request->getVar('jawabanE') ? $this->request->getVar('jawabanE') : null,
             'jawaban_benar' => $this->request->getVar('jawabanBenar')
         ]);
+
+            //Sorting Record by Kategori Soal
+            $this->soalModel->reSortIdx();
+
 
         return redirect()->to('../../admin/soal');
     }

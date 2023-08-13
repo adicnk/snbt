@@ -135,13 +135,15 @@ class SoalMDL extends Model
         
         foreach ($query->getResult() as $q){
             $index=0;
+            $idk = $q->id;
+            $this->where('kategori_soal_id', $idk);        
             $querySort=$this->findAll();
             foreach ($querySort as $qs) :
-                $id = $qs->id;    
+                $id = $qs['id'];    
                 $idx_new= $index+1;
-                $builder->set('idx', $idx_new);
-                $builder->where('id', $id);        
-                $builder->update();
+                $this->set('idx', $idx_new);
+                $this->where('id', $id);        
+                $this->update();
                 $index++;
             endforeach; 
         }
