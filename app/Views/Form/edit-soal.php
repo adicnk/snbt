@@ -24,15 +24,15 @@
             <div class="card-text text-center">
 
                 <?php foreach ($soal as $s) : ?>
-                    <form method="post" action="../../submitEdit/soal/<?= $s['id'] ?>" enctype="multipart/form-data">
+                    <form method="post" action="../../../submitEdit/soal/<?= $s['kategori_soal_id']?>/<?= $s['idx'] ?>" enctype="multipart/form-data">
                         <?= csrf_field() ?>
 
                         <div class="form-group">
                             <div class="form-row align-items-right">
                                 <div class="col-5">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text"><strong>Kategori</strong></div>
-                                        <select class="form-control" name="kategoriSoal" id="kategoriSoal" onfocusin="yellowin(this);" onfocusout="whiteout(this)">
+                                        <div class="input-group-text"><strong>Kategori</strong></div>kategoriSoal
+                                        <select class="form-control" name="kategoriSoal" id="" onfocusin="yellowin(this);" onfocusout="whiteout(this)">
                                             <option value=1 <?= $s['kategori_soal_id'] == 1 ? 'selected' : '' ?>>Pengetahuan Kuantitatif</option>
                                             <option value=1 <?= $s['kategori_soal_id'] == 2 ? 'selected' : '' ?>>Tes Kemampuan & Potensi Akademik</option>
                                         </select>
@@ -49,7 +49,7 @@
                                         </h2>
                                     </div>
 
-                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
                                             <div class="form-row align-items-right mt-3">
                                                 <div class="col-12">
@@ -115,7 +115,7 @@
 
                                 <?php $queryClass = $db->table('jawaban')->getWhere(['soal_id' => $s['id']]);
                                 foreach ($queryClass->getResult('array') as $qc) : ?>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
                                         <div class="card-body">
                                             <div class="form-row align-items-right mt-3">
                                                 <div class="col-12">
@@ -192,7 +192,7 @@
                         <button class="btn btn-lg btn-primary btn-block mt-3 mb-4" type="submit">SIMPAN</button>
                     </form>
                 <?php endforeach ?>
-                <a href="../../admin/soal" class="btn btn-lg btn-danger btn-block mt-3 mb-4">CANCEL</a>
+                <a href="../../../admin/soal" class="btn btn-lg btn-danger btn-block mt-3 mb-4">CANCEL</a>
             </div>
         </div>
     </div>

@@ -50,9 +50,9 @@ class Delete extends BaseController
         return view('form/delete-user', $data);
     }
 
-    public function soal($id)
+    public function soal($cat,$id)
     {
-        $query = $this->soalModel->searchSoalID($id);
+        $query = $this->soalModel->searchSoalID($cat,$id);
 
         // Delete the file from folder
         foreach ($query as $q) {
@@ -62,7 +62,7 @@ class Delete extends BaseController
             $fileSuara ? unlink('aud/' . $fileSuara) : '';
         }
 
-        $soal_id = $this->soalModel->getSoalID($id);
+        $soal_id = $this->soalModel->getSoalID($cat,$id);
         $this->soalModel->delSoal($soal_id);
         $this->jawabanModel->delJawaban($soal_id);
         $this->soalModel->reSortIdx();

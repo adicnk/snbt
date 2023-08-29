@@ -28,14 +28,15 @@ class Edit extends BaseController
         return view('form/edit-user', $data);
     }
 
-    public function soal($id)
+    public function soal($cat,$id)
     {
         // d($this->request->getVar('url'));
         $data = [
             'title'   => "Form Soal",
             'url' => $this->request->getVar('url'),
-            'soal' => $this->soalModel->searchSoalIDX($id)
+            'soal' => $this->soalModel->searchSoalIDX($cat,$id)
         ];
+        
         return view('form/edit-soal', $data);
     }
 }

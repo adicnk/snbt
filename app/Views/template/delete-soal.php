@@ -12,11 +12,11 @@
     <title>PAIT Administrator</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../../admin_assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../Filters/" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../../admin_assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../../admin_assets/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -31,8 +31,8 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../../../admin/dashboard">
                 <div class="sidebar-brand-text mx-3">
-                    <img src="../../favicon.ico" alt="main_logo" style="width:20%">
-                    PAIT Admin
+                    <img src="../../../favicon.ico" alt="main_logo" style="width:20%">
+                    Belajar Yuk Admin
                 </div>
             </a>
 
@@ -41,7 +41,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="../../../../admin/dashboard">
+                <a class="nav-link" href="../../.../../Language/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>

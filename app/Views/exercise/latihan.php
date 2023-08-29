@@ -45,7 +45,7 @@
                         <iframe src="https://belajaryuk.devinc.website/package/soal-<?=$wp_slug;?>-<?= $noID ?>/" width="100%" height="215px"></iframe>
                         <?php break;
                         case 2: ?>
-                            <iframe src="https://belajaryuk.devinc.website/package/soal-dp-<?= $noID ?>/" width="100%" height="100%"></iframe>
+                            <iframe src="https://belajaryuk.devinc.website/portfolio/soal-<?= $noID ?>/" width="100%" height="100%"></iframe>
                         <?php break;
                     } ?>
                         <!--<img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="30%" alt="gambar_soal"> -->
@@ -108,25 +108,25 @@
                             <li class="list-group-item"><b>B. </b>
                                 <label>
                                     <input name="jawabanB" id="jawabanB" type="radio" onclick="pilihan(2)" />
-                                    <span><?= $s['jawabanB']; ?></span>
+                                    <span><?= $s['jawabanB']==0 ? 0 : $s['jawabanB']; ?></span>
                                 </label>
                             </li>
                             <li class="list-group-item"><b>C. </b>
                                 <label>
                                     <input name="jawabanC" id="jawabanC" type="radio" onclick="pilihan(3)" />
-                                    <span><?= $s['jawabanC']; ?></span>
+                                    <span><?= $s['jawabanC']==0 ? 0 : $s['jawabanC']; ?></span>
                                 </label>
                             </li>
                             <li class="list-group-item"><b>D. </b>
                                 <label>
                                     <input name="jawabanD" id="jawabanD" type="radio" onclick="pilihan(4)" />
-                                    <span><?= $s['jawabanD']; ?></span>
+                                    <span><?= $s['jawabanD']==0 ? 0 : $s['jawabanD']; ?></span>
                                 </label>
                             </li>
                             <li class="list-group-item"><b>E. </b>
                                 <label>
                                     <input name="jawabanE" id="jawabanE" type="radio" onclick="pilihan(5)" />
-                                    <span><?= $s['jawabanE']; ?></span>
+                                    <span><?= $s['jawabanE']==0 ? 0 : $s['jawabanE']; ?></span>
                                 </label>
                             </li>
                             

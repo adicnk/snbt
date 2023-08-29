@@ -24,7 +24,7 @@
             foreach ($queryClass->getResult('array') as $k) : ?>
             <button type="submit" onclick="setSoalClass(<?=$k['id']?>)"  class="btn btn-primary">
             <span><?=$k['kname']?></span>
-            <span class="badge badge-sm badge-circle badge-danger border border-white border-2">5</span>
+            <span class="badge badge-sm badge-circle badge-danger border border-white border-2">15</span>
             </button><br/>
             <?php endforeach ?>
             <br/>

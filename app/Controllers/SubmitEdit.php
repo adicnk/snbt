@@ -69,8 +69,9 @@ class SubmitEdit extends BaseController
         }
     }
 
-    public function soal($id)
+    public function soal($cat,$id)
     {
+        $id=$this->soalModel->getSoalID($cat,$id);
         $namaGambar = null;
         $isPicture = $this->request->getVar('isPicture');
         $fileGambar = $this->request->getFile('fileGambar');
@@ -114,7 +115,7 @@ class SubmitEdit extends BaseController
         
         $this->soalModel->save([
             'id' => $id,
-            'kategori_soal_id' => $this->request->getVar('kategoriSoal'),
+            'kategori_soal_id' => $cat,
             'name' => $this->request->getVar('isiSoal'),
             'is_picture' => $isPicture == "on" ? 1 : null,
             'picture_url' => $namaGambar,

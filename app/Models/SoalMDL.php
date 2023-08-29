@@ -29,8 +29,9 @@ class SoalMDL extends Model
         return $this->findAll();
     }
 
-    public function searchSoalIDX($id)
+    public function searchSoalIDX($cat,$id)
     {
+        $this->where(['kategori_soal_id' => $cat]);
         $this->where(['idx' => $id]);
         return $this->findAll();
     }
@@ -52,8 +53,9 @@ class SoalMDL extends Model
         }
     }
 
-    public function getSoalID($id){
-        $this->where(['idx' => $id]);
+    public function getSoalID($cat,$idx){
+        $this->where(['kategori_soal_id' => $cat]);
+        $this->where(['idx' => $idx]);
         $query =  $this->findAll();
         foreach ($query as $q) {
             return $q['id'];
@@ -129,17 +131,17 @@ class SoalMDL extends Model
 
     public function reSortIdx(){
         $db      = \Config\Database::connect();
-        $builder = $db->table('kategori_soal');
-    
+        $builder = $db->table('kategori_soal');    
         $query = $builder->get();
         
         foreach ($query->getResult() as $q){
             $index=0;
             $idk = $q->id;
+
             $this->where('kategori_soal_id', $idk);        
             $querySort=$this->findAll();
             foreach ($querySort as $qs) :
-                $id = $qs['id'];    
+                $id = $qs['id'];
                 $idx_new= $index+1;
                 $this->set('idx', $idx_new);
                 $this->where('id', $id);        
