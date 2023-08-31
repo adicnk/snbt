@@ -40,12 +40,13 @@
                 </div>
                 <div class="text-center">
                     <?php if ($s['is_picture'] == 1) : ?>
+                        <?php //echo "https://belajaryuk.devinc.website/package/soal-".$wp_slug."-".$noID; ?>
                     <?php switch ($s['kategori_soal_id']) {
                         case 1:?>
                         <iframe src="https://belajaryuk.devinc.website/package/soal-<?=$wp_slug;?>-<?= $noID ?>/" width="100%" height="215px"></iframe>
                         <?php break;
                         case 2: ?>
-                            <iframe src="https://belajaryuk.devinc.website/portfolio/soal-<?= $noID ?>/" width="100%" height="100%"></iframe>
+                            <iframe src="https://belajaryuk.devinc.website/testimonial/soal-<?=$wp_slug;?>-<?= $noID ?>/" width="100%" height="100%"></iframe>
                         <?php break;
                     } ?>
                         <!--<img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="30%" alt="gambar_soal"> -->
