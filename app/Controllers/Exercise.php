@@ -69,7 +69,7 @@ class Exercise extends BaseController
         session()->set('soalArr', $soalArr);
         session()->set('jawabanArr', $jawabanArr);
         session()->set('soal', $soal);
-
+        
         $data = [
             'title' => "Latihan Soal",
             'soalIdx' => $soalArr,
@@ -121,12 +121,19 @@ class Exercise extends BaseController
                 $data = [
                     'title' => "USER LOGIN"
                 ];
-                session()->destroy();
                 return view('exercise/login', $data);            
             endif;
         endif;
-
+        
         $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
         session()->set('isFinish', false);
         $totalLatihan = $this->latihanModel->countLatihan($userID);
         $benar = $this->latihanModel->lastBenar($userID);
@@ -192,6 +199,15 @@ class Exercise extends BaseController
 
     public function belajar()
     {
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
         $data = [
             'title' => "PAIT @ PPNI",
             'user' => $this->userModel->searhAdminID(session()->get('userID')),
@@ -202,6 +218,15 @@ class Exercise extends BaseController
 
     public function profile()
     {
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
         $data = [
             'title' => "PAIT @ PPNI",
             'user' => $this->userModel->searhAdminID(session()->get('userID')),
@@ -212,6 +237,15 @@ class Exercise extends BaseController
 
     public function info()
     {
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
         $data = [
             'title' => "PAIT @ PPNI"
         ];
@@ -226,6 +260,15 @@ class Exercise extends BaseController
 
     public function latihanFP()
     {
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
     $data = [
         'paket' => $this->userModel->searhAdminID(session()->get('userID'))    
     ];

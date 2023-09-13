@@ -11,6 +11,7 @@
     $jawaban = session()->get('jawabanArr');
     $x = 1;
     foreach ($soal as $s) :
+
         if ($noID == $x) :
     ?>
             <!-- Navbar -->

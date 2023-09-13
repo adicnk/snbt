@@ -97,17 +97,14 @@
                         } ?> 
             <?php    } ?>
         </form>
-        <br/><em>Klik kotak nomor diatas untuk jawaban soal yg benar</em>                       
-        <hr/>
-        <?php if($boxNumber>0) {
-            if ($s['is_dp']==1){ ?>
-                <h5>Pembahasan Soal</h5>
-                <iframe src="https://belajaryuk.devinc.website/portfolio/p-<?=$boxNumber ?>" width="100%" height="500px"></iframe>
-            <?php }  
-        } ?>
+
+        
             </div>
             <div class="col-sm-6">
-            <?php 
+    vv        <br/><em>Klik kotak nomor disamping untuk mendapatkan jawaban soal yg benar</em>                       
+        </div>
+        <div>
+        <?php 
                 if($boxNumber>0) 
                 { 
                     $answer = session()->get('jawabanArr');
@@ -205,7 +202,14 @@
                             </ul>
             </div>
             <?php } ?>
-        
+        </div>
+        <div>
+        <?php if($boxNumber>0) {
+            if ($s['is_dp']==1){ ?>
+                <h5>Pembahasan Soal</h5>
+                <iframe src="https://belajaryuk.devinc.website/portfolio/p-<?=$boxNumber ?>" width="100%" height="500px"></iframe>
+            <?php }  
+        } ?>
         </div>
         <div class="row mt-3 mb-3">
             <div class="col md-6">

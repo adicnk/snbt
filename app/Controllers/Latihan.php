@@ -28,8 +28,14 @@ class Latihan extends BaseController
     public function index()
     {     
         
-        if (!session()->get('isFinish')) {                                            
-            
+        $userID = session()->get('userID');
+        if (!session()->get('isFinish')) {       
+            $data = [
+                'title'   => "User Login"
+            ];                                 
+            if (!isset($userID)) {
+                return view('exercise/login', $data);            
+            }
             $user = $this->userModel->searhAdminID(session()->get('userID'));
             //$totalSoal = $this->configModel->totalSoal($user);
             //$soal = session()->get('soal');
@@ -44,13 +50,6 @@ class Latihan extends BaseController
                     }
                 endforeach;
                 
-                if (!$totalSoal):
-                    $data = [
-                        'title' => "USER LOGIN"
-                    ];
-                    session()->destroy();
-                    return view('exercise/login', $data);            
-                endif;
                 $soal = $this->soalModel->soalBuilder($soalClass,$totalSoal);
     
             $nilaiMin = $this->configModel->nilaiMinimum();

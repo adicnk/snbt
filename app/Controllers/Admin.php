@@ -144,7 +144,6 @@ class Admin extends BaseController
     {
         //$keyword = $this->request->getVar('keyword');
         $kategori = $this->request->getVar('kategori');
-        $soal = $this->soalModel->searchSoal($kategori);
         $currentPage = $this->request->getVar('page_soal') ? $this->request->getVar('page_soal') : 1;
         $data = [
             'soal'  => $this->soalModel->paginate(5, 'soal'),
