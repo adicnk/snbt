@@ -82,26 +82,31 @@
                         <input type="submit" id="boxnumber" name="boxnumber" class="
                         <?php
                         $queryJawaban = session()->get('soal');
-                        foreach ($queryJawaban as $s) : ?>
-                        ?>
-                        <?php if ($answer[$x-1]==$s['jawaban_benar']) {
-                        echo "box-green";
-                        } else {
-                        echo "box-red";    
+                        $y=1;
+                        foreach ($queryJawaban as $s) : 
+                            if ($y==$x) {
+                            if (strval($answer[$x-1])===strval($s['jawaban_benar'])) {
+                                echo "box-green";                        
+                            } else {
+                                echo "box-red";
+                            }
+                            break;
                         }
-                    endforeach;
-                        ?>
-                        text-white font-weight-bold mr-2 mb-2" value="<?=$x?>"></input>
-                        <?php if (fmod($x,10)==0) {
-                            echo "<br/>";
-                        } ?> 
+                        $y++;
+                        endforeach;
+                    ?>
+                    text-white font-weight-bold mr-2 mb-2" value="<?=$x?>"></input>-
+                    <?php if (fmod($x,10)==0) {
+                        echo "<br/>";
+                    } ?> 
             <?php    } ?>
         </form>
 
         
             </div>
             <div class="col-sm-6">
-    vv        <br/><em>Klik kotak nomor disamping untuk mendapatkan jawaban soal yg benar</em>                       
+            <br/><em>Klik kotak nomor disamping untuk mendapatkan jawaban soal yg benar</em>  
+            <br/>Jika kotak berwarna merah berarti jawaban salah dan kotak berwarna hijau berarti jawaban benar.                     
         </div>
         <div>
         <?php 
@@ -109,9 +114,30 @@
                 { 
                     $answer = session()->get('jawabanArr');
                     $s =$queryJawaban[$boxNumber-1]; ?>
+                            <br/><hr/><br/><h5 class="card-title" align="left">Soal No. <?= $s['idx'] ?></h5>
                         <div class="text-center">
                         <?php if ($s['is_picture'] == 1) : ?>
-                            <img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="50%" alt="gambar_soal">
+
+
+                            <?php
+                            $query = $db->table('kategori_soal')->getWhere(['id' => $s['kategori_soal_id']]);
+                            foreach ($query->getResult('array') as $q) :
+                            ?>
+                                <?php $wp_slug=$q['wp_slug'];?>
+                            <?php endforeach ?>
+
+                            <?php //echo "https://belajaryuk.devinc.website/package/soal-".$wp_slug."-".$noID; ?>
+                    <?php switch ($s['kategori_soal_id']) {
+                        case 1:?>
+                        <iframe src="https://belajaryuk.devinc.website/package/soal-<?=$wp_slug;?>-<?= $s['idx'] ?>/" width="100%" height="215px"></iframe>
+                        <?php break;
+                        case 2: ?>
+                            <iframe src="https://belajaryuk.devinc.website/testimonial/soal-<?=$wp_slug;?>-<?= $noID ?>/" width="100%" height="100%"></iframe>
+                        <?php break;
+                    } ?>
+                        <!--<img src="../img/<?= $s['picture_url'] ?>" class="rounded" width="30%" alt="gambar_soal"> -->
+                    
+
                         <?php endif ?>
                     </div>
                     <br />
@@ -125,7 +151,6 @@
                     <?php endif ?>
                     <div class="card-body">
                         <form method="post" action="/latihan?id=<?= $s['idx']?>">
-                        <h5 class="card-title">Soal No. <?= $s['idx'] ?></h5><hr/>
                             <?php
                                 if ($answer[strval($boxNumber)-1]==""){ ?>
                             <h5 style="color:Green;"> Anda TIDAK MENJAWAB</h5> 

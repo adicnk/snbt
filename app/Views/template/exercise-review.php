@@ -69,6 +69,14 @@
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
+        
+        var delayInMilliseconds = 1000; //1 second
+
+        function delayasecond(){
+            setTimeout(function() {
+            alert();//your code to be executed after 1 second
+            }, delayInMilliseconds);
+        }
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
