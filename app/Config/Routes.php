@@ -30,8 +30,10 @@ $routes->setAutoRoute(true);
  */
 
 // For Admin Route
+
 $routes->get('/admin', 'Login::admin');
 $routes->get('/admin/(:segment)', 'Admin::index/$1');
+
 
 $routes->get('edit/admin/(:num)', 'Edit::admin/$1');
 
@@ -47,12 +49,14 @@ $routes->get('submit/soal', 'Submit::soal');
 $routes->get('submitEdit/soal/(:num)/(:num)', 'Submit::soal/$1/$2');
 $routes->get('/submit/review', 'Review::index');
 
+
 $routes->get('delete/soal/(:num)/(:num)', 'Delete::soal/$1/$2');
 
 $routes->get('delete/admin/(:num)', 'Delete::user/$1');
 
 // For Exercise Route
 $routes->get('/', 'Exercise::index');
+$routes->get('/daftar', 'Admin::daftar');
 $routes->get('/dashboard', 'Exercise::dashboard');
 $routes->get('/latihan', 'Exercise::soal');
 $routes->get('/latihanfp', 'Exercise::latihanFP');

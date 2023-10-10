@@ -33,4 +33,12 @@ class Login extends BaseController
         ];
         return view('exercise/login', $data);
     }
+
+    public function forgotPassword(){
+
+    }
+
+    public function fp(){
+        return redirect()->to('https://keperawatan.devinc.website');
+    }
 }

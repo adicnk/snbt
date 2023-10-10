@@ -189,6 +189,42 @@ class Submit extends BaseController
         }
     }
 
+    public function daftar(){
+        $name = $this->request->getVar('namaUser');
+        $slug = url_title($this->request->getVar('namaUser'), '-', true);
+        $email = $this->request->getVar('emailUser');
+        $asal = $this->request->getVar('asalUser');
+        $jurusan = $this->request->getVar('jurusanUser');
+        $username = $this->request->getVar('usernameUser');
+        $password = $this->request->getVar('emailUser') ;
+
+        $this->userModel->save([
+            'role_id' => 2,
+            'name' => $name,
+            'slug' => $slug,
+            'asal' => $asal,
+            'jurusan_id' => $jurusan,
+            'status_id' => 1,
+            'email' => $email,
+            'usernameUser' => $username,
+            'passwordUser' => $password,
+            'paket' => "demo"       
+        ]);
+
+        $data = [
+            'title' => 'Keperawatan | Daftar',
+            'nama' => $name,
+            'asal' => $asal,
+            'jurusan' => $jurusan,
+            'email' => $email,
+            'username' => $username,
+            'password' => $password
+        ];
+    
+        return view('admin/email',$data);
+        //return redirect()->to('https://keperawatan.devinc.website');
+    }
+
     public function review(){
         $boxNumber = $this->request->getVar('boxnumber');
         //return redirect()->to('../review');

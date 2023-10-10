@@ -188,4 +188,19 @@ class Admin extends BaseController
             }
         }
     }
+
+    public function daftar(){
+        $data = [
+            'title' => "Daftar Pengguna Baru Latihan Soal Keperawatan"
+        ];
+        return view('form/daftar', $data);        
+    }
+    
+    public function gmail(){
+        $data = [
+            'title' => "Gmail"
+        ];
+        return view('admin/gmail', $data);        
+    }
+
 }
