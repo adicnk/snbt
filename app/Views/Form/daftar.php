@@ -62,6 +62,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-row align-items-right mt-3">
+                            <div class="col-6">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><strong>Handphone</strong></div>
+                                    <input type="hpUser" name="hpUser" id="hpUser" class="form-control" placeholder="Masukkan nomor handphone ......" onfocusin="yellowin(this);" onfocusout="whiteout(this)">
+                                </div>
+                            </div>
+                        </div>
+                        
                         <hr/>
                         <div class="form-row align-items-right mt-3">
                             <div class="col-5">

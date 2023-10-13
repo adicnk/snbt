@@ -193,13 +193,10 @@ class Submit extends BaseController
         $name = $this->request->getVar('namaUser');
         $slug = url_title($this->request->getVar('namaUser'), '-', true);
         $email = $this->request->getVar('emailUser');
-        $hp = $this->request->getVar('hpUser');
         $asal = $this->request->getVar('asalUser');
         $jurusan = $this->request->getVar('jurusanUser');
         $username = $this->request->getVar('usernameUser');
-        $password = $this->request->getVar('passwordUser') ;
-
-        //dd($hp);
+        $password = $this->request->getVar('emailUser') ;
 
         $this->userModel->save([
             'role_id' => 2,
@@ -209,9 +206,8 @@ class Submit extends BaseController
             'jurusan_id' => $jurusan,
             'status_id' => 1,
             'email' => $email,
-            'hp' => $hp,
-            'username' => $username,
-            'password' => $password,
+            'usernameUser' => $username,
+            'passwordUser' => $password,
             'paket' => "demo"       
         ]);
 
@@ -225,8 +221,8 @@ class Submit extends BaseController
             'password' => $password
         ];
     
-        //return view('admin/email',$data);
-        return redirect()->to('https://keperawatan.devinc.website');
+        return view('admin/email',$data);
+        //return redirect()->to('https://keperawatan.devinc.website');
     }
 
     public function review(){
