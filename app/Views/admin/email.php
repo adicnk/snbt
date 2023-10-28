@@ -13,15 +13,15 @@ date_default_timezone_set('Etc/UTC');
 
 $mail = new PHPMailer();
 $mail->isSMTP();
-$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
 $mail->Host = 'keperawatan.devinc.website';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
-$mail->Username = 'daftar@keperawatan.devinc.website';
+$mail->Username = 'daftar@perawat.devinc.website';
 $mail->Password = 'kprwt2023';
-$mail->setFrom('contact@keperawatan.devinc.website', 'Daftar Latihan Soal');
-$mail->addReplyTo('contact@keperawatan.devinc.website', 'Daftar Latihan Soal');
+$mail->setFrom('daftar@perawat.devinc.website', 'Daftar Latihan Soal');
+$mail->addReplyTo('daftar@perawatadevinc.website', 'Daftar Latihan Soal');
 
 $mail->addAddress($email, $nama);
 $mail->Subject = 'Daftar Latihan Soal';
@@ -31,6 +31,7 @@ $mail->msgHTML('
     '<div class=="mt-2">Nama         :'.$nama.'</div>'.
     '<div>Sekolah      :'.$asal.'</div>'.
     '<div>Jurusan       :'.$jurusan.'</div>'.
+    '<div>Handphone      :'.$hp.'</div>'.
     '<div>Username       :'.$username.'</div>'.
     '<div>Password       :'.$password.'</div>'
 );

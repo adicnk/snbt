@@ -221,12 +221,13 @@ class Submit extends BaseController
             'asal' => $asal,
             'jurusan' => $jurusan,
             'email' => $email,
+            'hp' => $hp,
             'username' => $username,
             'password' => $password
         ];
     
-        //return view('admin/email',$data);
-        return redirect()->to('https://keperawatan.devinc.website');
+        return view('admin/email',$data);
+        //return redirect()->to('https://keperawatan.devinc.website');
     }
 
     public function review(){
