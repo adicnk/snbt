@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="../favicon.ico">
     <title>
-        Belajar Yuk - Tentang Kita
+        Keperawatan - Tentang Kita
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -27,7 +27,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="dashboard">
                 <img src="favicon.ico" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold text-white">BELAJAR YUK</span>
+                <span class="ms-1 font-weight-bold text-white">Keperawatan</span>
             </a>
         </div>
         <hr class="horizontal light mt-0 mb-2">
@@ -41,6 +41,7 @@
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
+                <!--
                 <li class="nav-item">
                     <a class="nav-link text-white" href="belajar">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -49,6 +50,7 @@
                         <span class="nav-link-text ms-1">Kisi-kisi</span>
                     </a>
                 </li>
+                -->
                 <li class="nav-item">
                     <a class="nav-link text-white " href="/latihan">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -57,9 +59,18 @@
                         <span class="nav-link-text ms-1">Latihan Soal</span>
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link text-white active bg-gradient-primary" href="profile">
+                    <a class="nav-link text-white " href="/latihan">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">shopping_cart</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Beli Paket Soal</span>
+                    </a>
+                </li>
+
+                <hr class="horizontal light mt-0 mb-2">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="profile">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">person</i>
                         </div>
@@ -89,7 +100,7 @@
                     <div class="row align-items-center justify-content-lg-between">
                         <div class="col-lg-6 mb-lg-0 mb-4">
                             <div class="copyright text-center text-sm text-muted text-lg-start">
-                                BELAJAR YUK ©
+                                Keperawatan ©
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script>

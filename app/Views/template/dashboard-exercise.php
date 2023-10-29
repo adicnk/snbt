@@ -33,6 +33,7 @@
         <hr class="horizontal light mt-0 mb-2">
         <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
             <ul class="navbar-nav">
+
                 <li class="nav-item">
                     <a class="nav-link text-white active bg-gradient-primary" href="">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -41,6 +42,7 @@
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
+                <!--
                 <li class="nav-item">
                     <a class="nav-link text-white " href="belajar">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -49,6 +51,7 @@
                         <span class="nav-link-text ms-1">Kisi-kisi</span>
                     </a>
                 </li>
+                -->
                 <li class="nav-item">
                     <a class="nav-link text-white " href="/latihanfp">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -59,6 +62,16 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link text-white " href="/beli">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">shopping_cart</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Beli Paket Soal</span>
+                    </a>
+                </li>
+
+                <hr class="horizontal light mt-0 mb-2">
+                <li class="nav-item">
                     <a class="nav-link text-white " href="profile">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">person</i>
@@ -66,7 +79,7 @@
                         <span class="nav-link-text ms-1">Profile</span>
                     </a>
                 </li>
-
+                <!--
                 <li class="nav-item">
                     <a class="nav-link text-white " href="info">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -75,7 +88,8 @@
                         <span class="nav-link-text ms-1">Info Penting</span>
                     </a>
                 </li>
-
+-->
+                
                 <li class="nav-item">
                     <a class="nav-link text-white " href="/">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -109,9 +123,9 @@
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
-                            <a href="/belajar" class="nav-link text-body font-weight-bold px-0">
-                                <i class="fa fa-book-open me-sm-1"></i>
-                                Kisi=kisi
+                            <a href="/beli" class="nav-link text-body font-weight-bold px-0">
+                                <i class="fa fa-shopping-cart me-sm-1"></i>
+                                Beli Paket Soal
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
@@ -126,12 +140,14 @@
                                 Profile
                             </a>
                         </li>
+                        <!--
                         <li class="nav-item px-3 d-flex align-items-center">
                             <a href="/info" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-info me-sm-1"></i>
                                 Info Penting
                             </a>
                         </li>
+                    -->
                         <li class="nav-item px-3 d-flex align-items-center">
                             <a href="/" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-angle-right me-sm-1"></i>

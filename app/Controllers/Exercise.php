@@ -235,6 +235,13 @@ class Exercise extends BaseController
         return view('exercise/profile', $data);
     }
 
+    public function beli(){
+        $data = [
+            'title'   => "Beli Paket Soal"
+        ];
+        return view('exercise/beli', $data);                                         
+    }
+
     public function info()
     {
         $userID = session()->get('userID');
