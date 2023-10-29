@@ -201,6 +201,46 @@ class Submit extends BaseController
 
         //dd($hp);
 
+        //validation
+        if(!$this->validate([
+            'namaUser'=>[
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Nama tidak boleh kosong'
+                    ]
+            ],
+            'emailUser'=>[
+                'rules'=>'valid_email',
+                'errors'=>[
+                    'valid_email'=>'Alamat email harus benar'
+                ]
+            ],
+            'hpUser'=>[
+                'rules'=>'required|numeric',
+                'errors'=>[
+                    'numeric'=>'Nomor handphone harus berupa angka',
+                    'required'=>'Nomor handphone harus diisi'
+                ]
+            ],
+            'usernameUser'=>[
+                'rules'=>'required|is_unique[user.username]',
+                'errors'=>[
+                    'required'=>'Username harus diisi',
+                    'is_unique' =>'Username sudah terdaftar'
+                ]
+            ],
+            'passwordUser'=>[
+                'rules'=>'required',
+                'errors'=>[
+                    'required'=>'Password harus ada'
+                ]
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            //dd($validation);
+            return redirect()->to('/daftar')->withInput()->with('validation',$validation);
+        }
+
         $this->userModel->save([
             'role_id' => 2,
             'name' => $name,
@@ -226,8 +266,8 @@ class Submit extends BaseController
             'password' => $password
         ];
     
-        return view('admin/email',$data);
-        //return redirect()->to('https://keperawatan.devinc.website');
+        //return view('admin/email',$data);
+        return redirect()->to('https://keperawatan.devinc.website');
     }
 
     public function review(){

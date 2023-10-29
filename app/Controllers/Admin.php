@@ -189,10 +189,12 @@ class Admin extends BaseController
         }
     }
 
-    public function daftar(){
+    public function daftar(){       
         $data = [
-            'title' => "Daftar Pengguna Baru Latihan Soal Keperawatan"
+            'title' => "Daftar Pengguna Baru Latihan Soal Keperawatan",
+            'validation'=> \Config\Services::validation()
         ];
+        //dd($data);
         return view('form/daftar', $data);        
     }
     
