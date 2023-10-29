@@ -25,16 +25,16 @@ $mail->addReplyTo('daftar@perawatadevinc.website', 'Daftar Latihan Soal');
 
 $mail->addAddress($email, $nama);
 $mail->Subject = 'Daftar Latihan Soal';
-$mail->msgHTML('
-
-    <p>Anda telah mendaftar ke <b>Latihan Soal Keperawatan </b> dengan detail sebagai berikut :</p>'.
+$message=
+    '<p>Anda telah mendaftar ke <b>Latihan Soal Keperawatan </b> dengan detail sebagai berikut :</p>'.
     '<div class=="mt-2">Nama         :'.$nama.'</div>'.
     '<div>Sekolah      :'.$asal.'</div>'.
     '<div>Jurusan       :'.$jurusan.'</div>'.
     '<div>Handphone      :'.$hp.'</div>'.
     '<div>Username       :'.$username.'</div>'.
-    '<div>Password       :'.$password.'</div>'
-);
+    '<div>Password       :'.$password.'</div>';
+$mail->msgHTML($message);
+
 $mail->AltBody = 'This is a plain-text message body';
 $mail->addAttachment('logo/logo.png');
 
@@ -42,6 +42,7 @@ if (!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
 ?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="mt-3">
@@ -54,6 +55,7 @@ if (!$mail->send()) {
     </div>
     <div>email telah dikirim ke <?= $email ?></div>
     <a class="btn btn-primary mt-3 mb-4" href="../login/fp">Done</a>
+    
     <div class="mt-3">
         <hr>
     </div>

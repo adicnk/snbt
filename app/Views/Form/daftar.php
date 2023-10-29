@@ -31,7 +31,7 @@
                     </div>
 
                         <div class=" form-row align-items-right mt-3">
-                            <div class="col-7">
+                            <div class="col-12">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Nama</strong></div>
                                     <input type="text" name="namaUser" id="namaUser" class="form-control <?= ($validation->hasError('namaUser')) ? ' is-invalid': ''?>" placeholder="Masukkan Nama ......" onfocusin="yellowin(this);" onfocusout="whiteout(this)" onkeypress="return alphaOnly(event);" value="<?= old('namaUser')?>">
@@ -40,15 +40,15 @@
                             </div>
                         </div>
                         <div class=" form-row align-items-right mt-3">
-                            <div class="col-7">
+                            <div class="col-12">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Sekolah</strong></div>
-                                    <input type="text" name="asalUser" id="asalUser" class="form-control" placeholder="Masukkan Sekolah..." onfocusin="yellowin(this);" onfocusout="whiteout(this)" onkeypress="return alphaOnly(event);">
+                                    <input type="text" name="asalUser" id="asalUser" class="form-control" placeholder="Masukkan Sekolah..." onfocusin="yellowin(this);" onfocusout="whiteout(this)" onkeypress="return alphaOnly(event);" value="<?= old('asalUser')?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row align-items-right mt-3">
-                            <div class="col-5">
+                            <div class="col-12">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Jurusan</strong></div>
                                     <select class="form-control" name="jurusanUser" id="jurusanUser" onfocusin="yellowin(this);" onfocusout="whiteout(this)">
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <div class="form-row align-items-right mt-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Email</strong></div>
                                     <input type="email" name="emailUser" id="emailUser" class="form-control <?= ($validation->hasError('emailUser')) ? ' is-invalid': ''?>" placeholder="Masukkan Email ......" onfocusin="yellowin(this);" onfocusout="whiteout(this)" value="<?= old('emailUser')?>">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="form-row align-items-right mt-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Handphone</strong></div>
                                     <input type="hpUser" name="hpUser" id="hpUser" class="form-control <?= ($validation->hasError('hpUser')) ? ' is-invalid': ''?>" placeholder="Masukkan nomor handphone ......" onfocusin="yellowin(this);" onfocusout="whiteout(this)" value="<?= old('hpUser')?>">
@@ -79,7 +79,7 @@
                         
                         <hr/>
                         <div class="form-row align-items-right mt-3">
-                            <div class="col-7">
+                            <div class="col-12">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Username</strong></div>
                                     <input type="text" name="usernameUser" id="usernameUser" class="form-control <?= ($validation->hasError('usernameUser')) ? ' is-invalid': ''?>" placeholder="Buat Username untuk Login ......" onfocusin="yellowin(this);" onfocusout="whiteout(this)" onkeypress="return alphaOnly(event);" value="<?= old('usernameUser')?>">
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="form-row align-items-right mt-3">
-                            <div class="col-7">
+                            <div class="col-12">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><strong>Password</strong></div>
                                     <input type="password" name="passwordUser" id="passwordUser" class="form-control <?= ($validation->hasError('passwordUser')) ? ' is-invalid': ''?>" placeholder="Buat Password untuk Login ......" onfocusin="yellowin(this);" onfocusout="whiteout(this)" value="<?= old('passwordUser')?>">

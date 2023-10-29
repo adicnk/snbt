@@ -266,8 +266,8 @@ class Submit extends BaseController
             'password' => $password
         ];
     
-        //return view('admin/email',$data);
-        return redirect()->to('https://keperawatan.devinc.website');
+        return view('admin/email',$data);
+        //return redirect()->to('https://keperawatan.devinc.website');
     }
 
     public function review(){
