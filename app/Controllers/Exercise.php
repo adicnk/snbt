@@ -235,11 +235,69 @@ class Exercise extends BaseController
         return view('exercise/profile', $data);
     }
 
-    public function beli(){
+    public function request(){
+        $userID = session()->get('userID');
+
         $data = [
-            'title'   => "Beli Paket Soal"
-        ];
-        return view('exercise/beli', $data);                                         
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
+    $data = [
+        'paket' => $this->userModel->searhAdminID(session()->get('userID'))    
+    ];
+        return view('exercise/beli',$data);
+    }
+
+    public function beli(){
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
+    $data = [
+        'paket' => $this->userModel->searhAdminID(session()->get('userID'))    
+    ];
+        return view('exercise/beli',$data);
+    }
+
+    public function belifp(){
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
+    $data = [
+        'paket' => $this->userModel->searhAdminID(session()->get('userID'))    
+    ];
+        return view('exercise/beli',$data);
+    }
+
+    public function belipaket(){
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "Beli Paket"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
+    $data = [
+        'title' => 'Beli Paket'
+    ];
+        return view('exercise/deal',$data);
+        
     }
 
     public function info()

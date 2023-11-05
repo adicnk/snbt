@@ -205,4 +205,12 @@ class Admin extends BaseController
         return view('admin/gmail', $data);        
     }
 
+    public function belipaket(){
+
+    }
+
+    public function bayarpaket(){
+
+    }
+
 }

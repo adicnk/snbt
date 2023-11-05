@@ -11,7 +11,7 @@ class KategoriMDL extends Model
     protected $useTimestamps = true;
 
     // Field yang boleh diisi waktu saving data ** harus didefinisikan dulu **
-    protected $allowedFields = ['id','knam', 'jumlah_soal'];
+    protected $allowedFields = ['id','kname', 'jumlah_soal', 'is_buy', 'price', 'is_request'];
 
     public function saveJumlah($sel, $val)
     {

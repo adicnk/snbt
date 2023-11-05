@@ -69,7 +69,8 @@ $routes->get('/profile', 'Exercise::profile');
 $routes->get('/about', 'Exercise::about');
 $routes->get('/info', 'Exercise::info');
 $routes->get('/review', 'Exercise::review');
-$routes->get('/beli', 'Exercise::beli');
+$routes->get('/request', 'Exercise::beli');
+$routes->get('/belipaket', 'Exercise::belipaket');
 
 /*
  * --------------------------------------------------------------------

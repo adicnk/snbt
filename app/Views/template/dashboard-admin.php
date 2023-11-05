@@ -102,6 +102,20 @@
 
             <!-- Nav Item - Sign Out -->
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBeli" aria-expanded="true" aria-controls="collapseBeli">
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Pembelian</span>
+                </a>
+                <div id="collapseBeli" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="../admin/belipaket">Request</a>
+                        <a class="collapse-item" href="../admin/bayarpaket">Konfirmasi Bayar</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
                 <a class="nav-link" href="../admin">
                     <i class="fas fa-fw fa-stop-circle"></i>
                     <span>Logout</span></a>
