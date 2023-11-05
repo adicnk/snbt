@@ -54,7 +54,7 @@ class Exercise extends BaseController
         $soalClass = $this->request->getVar('soalClass');
         $soal = $this->soalModel->soalBuilder($soalClass);
 
-        dd($soalClass);
+        //dd($soalClass);
 
         //$totalSoal = $this->configModel->totalSoal($user);
         $no = $this->request->getVar('id');
@@ -293,10 +293,15 @@ class Exercise extends BaseController
             return view('exercise/login', $data);            
         }
 
-    $data = [
-        'title' => 'Beli Paket'
-    ];
-        return view('exercise/deal',$data);
+        $this->userSubcribeModel->save([
+            'user_id' => $userID,
+            'is_request' => 1     
+        ]);
+
+        $data = [
+            'title' => 'Beli Paket'
+        ];
+            return view('exercise/deal',$data);
         
     }
 
