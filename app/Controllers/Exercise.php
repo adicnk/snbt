@@ -283,20 +283,24 @@ class Exercise extends BaseController
         return view('exercise/beli',$data);
     }
 
-    public function belipaket(){
+    public function belipaket($idKategoriSoal){
         $userID = session()->get('userID');
 
         $data = [
-            'title'   => "Beli Paket"
+            'title'   => "User Login",
         ];                                 
         if (!isset($userID)) {
             return view('exercise/login', $data);            
         }
 
-        $this->userSubcribeModel->save([
-            'user_id' => $userID,
-            'is_request' => 1     
-        ]);
+        $idUserSubcribe = $this->userSubcribeModel->getID($idKategoriSoal,$userID);
+        //dd($idKategoriSoal);
+        if ($idKategoriSoal) {
+            $this->userSubcribeModel->save([
+                'id' => $idKategoriSoal,
+                'is_request' => 1     
+            ]);
+        }
 
         $data = [
             'title' => 'Beli Paket'

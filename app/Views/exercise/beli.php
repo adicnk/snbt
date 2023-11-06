@@ -45,7 +45,7 @@
             <span class="badge badge-sm badge-circle badge-danger border border-white border-2">50</span>
             </button>
             <h6>  <?= ($k['price']) ? 'Harga: Rp ' :'' ?><?= number_format($k['price']); ?>
-             <?= $k['price'] ?  '<a type="button" href="belipaket" class="btn btn-secondary btn-sm">Beli</a>':''?><br/>
+             <?= $k['price'] ?  '<a type="button" href="belipaket/'.$k['id'].'" class="btn btn-secondary btn-sm">Beli</a>':''?><br/>
             <?php endforeach ?>
                 
         <?php break;

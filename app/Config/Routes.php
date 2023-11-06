@@ -70,7 +70,7 @@ $routes->get('/about', 'Exercise::about');
 $routes->get('/info', 'Exercise::info');
 $routes->get('/review', 'Exercise::review');
 $routes->get('/request', 'Exercise::beli');
-$routes->get('/belipaket', 'Exercise::belipaket');
+$routes->get('/belipaket/(:segment)', 'Exercise::belipaket/$1');
 
 /*
  * --------------------------------------------------------------------
