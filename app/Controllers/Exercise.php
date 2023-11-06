@@ -295,11 +295,17 @@ class Exercise extends BaseController
 
         $idUserSubcribe = $this->userSubcribeModel->getID($idKategoriSoal,$userID);
         //dd($idKategoriSoal);
-        if ($idKategoriSoal) {
+        if ($idUserSubcribe) {
+            $this->userSubcribeModel->save([
+                'id' => $idUserSubcribe,
+                'is_request' => 1     
+            ]);
+        } else {
             $this->userSubcribeModel->save([
                 'id' => $idKategoriSoal,
                 'is_request' => 1     
             ]);
+
         }
 
         $data = [

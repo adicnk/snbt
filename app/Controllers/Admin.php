@@ -8,10 +8,12 @@ use App\Models\ChartPieMDL;
 use App\Models\ConfigMDL;
 use App\Models\LoginMDL;
 use App\Models\KategoriMDL;
+use App\Models\UserSubcribeMDL;
+use App\Models\UserSubcribeMDLMDL;
 
 class Admin extends BaseController
 {
-    protected $userModel, $chartPieModel, $soalModel, $configModel, $loginModel, $kategoriModel;
+    protected $userModel, $chartPieModel, $soalModel, $configModel, $loginModel, $kategoriModel, $userSubcribeModel;
 
     public function __construct()
     {
@@ -21,6 +23,7 @@ class Admin extends BaseController
         $this->configModel = new ConfigMDL();
         $this->loginModel = new LoginMDL();
         $this->kategoriModel = new KategoriMDL();
+        $this->userSubcribeModel = new UserSubcribeMDL();
     }
 
     public function index($links = false)
@@ -94,6 +97,17 @@ class Admin extends BaseController
                         'chartLabelData' => $this->chartPieModel->getLabelSoal()
                     ];
                     return view('admin/dashboard', $data);
+                    break;
+                case 'belipaket':
+                    $currentPage = 1;
+                    $data = [
+                        'title' => 'User Request',
+                        'user_subcribe'  => $this->userSubcribeModel ->paginate(5, 'user_subcribe'),
+                        'pager' => $this->userSubcribeModel->pager,
+                        'currentPage' => $currentPage
+
+                    ];
+                    return view('admin/request', $data);    
                     break;
             }
         }
@@ -203,10 +217,6 @@ class Admin extends BaseController
             'title' => "Gmail"
         ];
         return view('admin/gmail', $data);        
-    }
-
-    public function belipaket(){
-
     }
 
     public function bayarpaket(){

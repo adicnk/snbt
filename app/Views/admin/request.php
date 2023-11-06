@@ -34,9 +34,12 @@
                 <tr>
                     <th scope="col" style="text-align: center">#</th>
                     <th scope="col" width="300px">Nama</th>
-                    <th scope="col" width="150px">Jurusan</th>
-                    <th scope="col" width="300px" style="text-align: center">Email</th>
-                    <th scope="col" style="text-align: center">NIM</th>
+                    <th scope="col" width="150px">Paket</th>
+                    <th scope="col" width="300px" style="text-align: center">Soal</th>
+                    <th scope="col" style="text-align: center">Bayar</th>
+                    <th scope="col" style="text-align: center">Permintaan</th>
+                    <th scope="col" style="text-align: center">Pesan</th>                    
+                    <th scope="col" style="text-align: center">Konfirmasi</th>                    
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -44,17 +47,20 @@
                 <tr>
                     <?php
                     $index = 1 + (5 * ($currentPage - 1));
-                    foreach ($user as $usr) :
+                    foreach ($user_subcribe as $us) :
                     ?>
                 <tr>
                     <td style="text-align: center"><?= $index ?></td>
-                    <td><?= $usr['name'] ?></td>
-                    <td><?= $usr['jname'] ? $usr['jname'] : '<img src="../../icon/not_available.png" class="mr-2" />' ?></td>
-                    <td style="text-align: center"><?= $usr['email'] ? $usr['email'] : '<img src="../../icon/not_available.png" class="mr-2" />' ?></td>
-                    <td style="text-align: center"><?= $usr['nip'] ? $usr['nip'] : $usr['nim'] ?></td>
+                    <td><?= $us['user_id'] ?></td>
+                    <td><?= $us['subcribe_id'] ?></td>
+                    <td><?= $us['kategori_soal_id'] ?></td>
+                    <td><?= $us['is_buy'] ? '<img src="../../icon/available.png" class="mr-2" />' : '<img src="../../icon/not_available.png" class="mr-2" />' ?></td>
+                    <td><?= $us['is_request'] ? '<img src="../../icon/available.png" class="mr-2" />' : '<img src="../../icon/not_available.png" class="mr-2" />' ?></td>
+                    <td><?= $us['is_message'] ? '<img src="../../icon/available.png" class="mr-2" />' : '<img src="../../icon/not_available.png" class="mr-2" />' ?></td>
+                    <td><?= $us['is_confirm'] ? '<img src="../../icon/available.png" class="mr-2" />' : '<img src="../../icon/not_available.png" class="mr-2" />' ?></td>
                     <td>
-                        <a href="/edit/user/<?= $usr['idx'] . '?url=mahasiswa' ?>"><img src=" ../../icon/edit.png" class="mr-2" /></a>
-                        <a href="/delete/admin/<?= $usr['idx'] . '?url=mahasiswa' ?>"><img src="../../icon/delete.png" /></a>
+                        <a href="/usersubcribe/pesan"><img src=" ../../icon/message.png" class="mr-2" /></a>
+                        <a href="/usersubcribe/confirm"><img src="../../icon/confirm.png" /></a>
                     </td>
                 </tr>
             <?php
