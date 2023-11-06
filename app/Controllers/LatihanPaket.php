@@ -28,7 +28,8 @@ class LatihanPaket extends BaseController
     public function index()
     {
         session()->set('isFinish', false);
-        $user = $this->userModel->searhAdminID(session()->get('userID'));
+        $user = $this->userModel->searchPaket(session()->get('userID'));
+        
         // Soal tp (tanpa pembahasan) dan dp (dengan pembahasan)        
         //$soal = $this->soalModel->isChoosen();
         $soalClass = $this->request->getVar('soalClass');

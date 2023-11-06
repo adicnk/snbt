@@ -262,7 +262,7 @@ class Exercise extends BaseController
         }
 
     $data = [
-        'paket' => $this->userModel->searhAdminID(session()->get('userID'))    
+        'paket' => $this->userModel->searchPaket(session()->get('userID')) 
     ];
         return view('exercise/beli',$data);
     }
@@ -278,7 +278,7 @@ class Exercise extends BaseController
         }
 
     $data = [
-        'paket' => $this->userModel->searhAdminID(session()->get('userID'))    
+        'paket' => $this->userModel->searchPaket(session()->get('userID')) 
     ];
         return view('exercise/beli',$data);
     }
@@ -302,7 +302,8 @@ class Exercise extends BaseController
             ]);
         } else {
             $this->userSubcribeModel->save([
-                'id' => $idKategoriSoal,
+                'user_id' => $userID,
+                'kategoi_soal_id' => $idKategoriSoal,
                 'is_request' => 1     
             ]);
 
@@ -350,8 +351,8 @@ class Exercise extends BaseController
         }
 
     $data = [
-        'paket' => $this->userModel->searhAdminID(session()->get('userID'))    
-    ];
+        'paket' => $this->userModel->searchPaket(session()->get('userID'))    
+    ];        
         return view('exercise/latihan-fp',$data);
     }
 

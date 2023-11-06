@@ -13,7 +13,7 @@
                 
                 <form method="post" action="/latihanpaket">
                     <?= csrf_field() ?>
-                    
+                
                     <?php foreach ($paket as $pkt) {
                         switch ($pkt['paket']) {
                             case "demo": 
