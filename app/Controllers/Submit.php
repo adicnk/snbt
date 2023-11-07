@@ -255,8 +255,13 @@ class Submit extends BaseController
             'paket' => "demo"       
         ]);
 
+        //ID terakhir yg di buat di tabel user
+        $db      = \Config\Database::connect();
+        $lastID = $db->insertID();
+
         $data = [
             'title' => 'Keperawatan | Daftar',
+            'idx' => $lastID,
             'nama' => $name,
             'asal' => $asal,
             'jurusan' => $jurusan,
@@ -266,6 +271,11 @@ class Submit extends BaseController
             'password' => $password
         ];
     
+        $this->userModel->save([
+            'id' => $lastID,
+            'idx' => $lastID
+        ]);
+
         return view('admin/email',$data);
         //return redirect()->to('https://keperawatan.devinc.website');
     }
