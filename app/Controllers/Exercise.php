@@ -5,15 +5,17 @@ namespace App\Controllers;
 use App\Models\ConfigMDL;
 use App\Models\SoalMDL;
 use App\Models\JawabanMDL;
+use App\Models\KategoriMDL;
 use App\Models\LatihanMDL;
 use App\Models\LoginMDL;
 use App\Models\UserMDL;
+use App\Models\KategoriMDLMDL;
 use App\Models\UserSubcribeMDL;
 
 class Exercise extends BaseController
 {
 
-    protected $soalModel, $configModel, $jawabanModel, $latihanModel, $loginModel, $userModel, $userSubcribeModel;
+    protected $soalModel, $configModel, $jawabanModel, $latihanModel, $loginModel, $userModel, $kategoriModel, $userSubcribeModel;
 
     public function __construct()
     {
@@ -23,6 +25,7 @@ class Exercise extends BaseController
         $this->latihanModel = new LatihanMDL();
         $this->loginModel = new LoginMDL();
         $this->userModel = new UserMDL();
+        $this->kategoriModel = new KategoriMDL();
         $this->userSubcribeModel = new UserSubcribeMDL();
     }
 
@@ -294,20 +297,15 @@ class Exercise extends BaseController
         }
 
         $idUserSubcribe = $this->userSubcribeModel->getID($idKategoriSoal,$userID);
-        //dd($idKategoriSoal);
-        if ($idUserSubcribe) {
-            $this->userSubcribeModel->save([
-                'id' => $idUserSubcribe,
-                'is_request' => 1     
-            ]);
-        } else {
-            $this->userSubcribeModel->save([
-                'user_id' => $userID,
-                'kategoi_soal_id' => $idKategoriSoal,
-                'is_request' => 1     
-            ]);
+        $total = $this->kategoriModel->getTotalSoal($idKategoriSoal);
 
-        }
+        $this->userSubcribeModel->save([
+            'id' => $idUserSubcribe,
+            'user_id' => $userID,
+            'subcribe_id' => 2,
+            'kategori_soal_id' => $idKategoriSoal,
+            'is_request' => 1     
+        ]);
 
         $data = [
             'title' => 'Beli Paket'

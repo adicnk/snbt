@@ -8,10 +8,11 @@ use App\Models\SoalMDL;
 use App\Models\JawabanMDL;
 use App\Models\KategoriMDL;
 use App\Models\ConfigMDL;
+use App\Models\UserSubcribeMDL;
 
 class Submit extends BaseController
 {
-    protected $userModel, $loginModel, $soalModel, $jawabanModel, $kategoriModel, $configModel;
+    protected $userModel, $loginModel, $soalModel, $jawabanModel, $kategoriModel, $configModel, $userSubcribeModel;
 
     public function __construct()
     {
@@ -21,6 +22,7 @@ class Submit extends BaseController
         $this->jawabanModel = new JawabanMDL();
         $this->kategoriModel = new KategoriMDL();
         $this->configModel = new ConfigMDL();
+        $this->userSubcribeModel = new UserSubcribeMDL();
     }
 
     public function admin()
@@ -278,6 +280,29 @@ class Submit extends BaseController
 
         return view('admin/email',$data);
         //return redirect()->to('https://keperawatan.devinc.website');
+    }
+
+    public function pesan($id){
+
+        $hpUser = "";
+        $message = "";
+        $data = [
+            'title' => 'Keperawatan | Daftar',
+            'hp' => $hpUser,
+            'message' => $message
+        ];
+    
+        $this->userSubcribeModel->save([
+            'id' => $id,
+            'is_message' => 1
+        ]);
+
+        return view('admin/pesan',$data);
+        //return redirect()->to('https://keperawatan.devinc.website');
+    }
+
+    public function confirm($id){
+
     }
 
     public function review(){

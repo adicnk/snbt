@@ -20,4 +20,13 @@ class KategoriMDL extends Model
         $this->update();
         return;
     }
+    public function getTotalSoal($id){
+        $this->where(['id' => $id]);        
+        $query = $this->findAll();
+        foreach($query as $qry){
+            if ($qry['id']==$id){
+                    return $qry['name'];
+            }
+        }
+    }
 }

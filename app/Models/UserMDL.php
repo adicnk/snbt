@@ -47,6 +47,23 @@ class UserMDL extends Model
         return  $this->findAll();
     }
 
+    public function searchID($id,$field){
+        $this->where(['user.id' => $id]);
+        $query = $this->findAll();
+        foreach ($query as $qry) {
+            if ($qry['id']==$id) {
+                switch ($field){
+                    case 'name' :
+                        return $qry['name'];
+                        break;
+                }
+                
+            } else {
+                return false;
+            }
+        }
+    }
+
     public function statusLogin($username, $password)
     {
         $this->like('username', $username);
