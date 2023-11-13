@@ -70,7 +70,19 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="/request">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">check</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Konfirmasi Pembayaran</span>
+                    </a>
+                </li>
+
+
                 <hr class="horizontal light mt-0 mb-2">
+                
+                <!--
                 <li class="nav-item">
                     <a class="nav-link text-white " href="profile">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -79,6 +91,8 @@
                         <span class="nav-link-text ms-1">Profile</span>
                     </a>
                 </li>
+                -->
+                
                 <!--
                 <li class="nav-item">
                     <a class="nav-link text-white " href="info">
@@ -123,23 +137,33 @@
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
-                            <a href="/beli" class="nav-link text-body font-weight-bold px-0">
-                                <i class="fa fa-shopping-cart me-sm-1"></i>
-                                Beli Paket Soal
-                            </a>
-                        </li>
-                        <li class="nav-item px-3 d-flex align-items-center">
                             <a href="/latihanfp" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-dumbbell me-sm-1"></i>
                                 Latihan Soal
                             </a>
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
+                            <a href="/beli" class="nav-link text-body font-weight-bold px-0">
+                                <i class="fa fa-shopping-cart me-sm-1"></i>
+                                Beli Paket Soal
+                            </a>
+                        </li>
+                        <li class="nav-item px-3 d-flex align-items-center">
+                            <a href="/beli" class="nav-link text-body font-weight-bold px-0">
+                                <i class="fa fa-check me-sm-1"></i>
+                                Konfirmasi Pembayaran
+                            </a>
+                        </li>
+                        
+                        <!--
+                        <li class="nav-item px-3 d-flex align-items-center">
                             <a href="/profile" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
                                 Profile
                             </a>
                         </li>
+                        -->
+                        
                         <!--
                         <li class="nav-item px-3 d-flex align-items-center">
                             <a href="/info" class="nav-link text-body font-weight-bold px-0">
@@ -180,6 +204,10 @@
                             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                                 <li class="nav-item">
                                     <a href="about" class="btn btn-info text-white">About The Application</a>
+                                </li>
+                                <li>&nbsp;&nbsp;</li>
+                                <li class="nav-item">
+                                    <a href="/profile" class="btn btn-info text-white">Profile</a>
                                 </li>
                             </ul>
                         </div>

@@ -48,8 +48,8 @@ $routes->get('submitedit/admin/(:num)', 'Submit::admin/$1');
 $routes->get('submit/soal', 'Submit::soal');
 $routes->get('submitEdit/soal/(:num)/(:num)', 'Submit::soal/$1/$2');
 $routes->get('/submit/review', 'Review::index');
-$routes->get('submit/pesan/:num', 'Submit::pesan/$1');
-$routes->get('submit/confirm/:num', 'Submit::confirm/$1');
+$routes->get('submit/pesan/(:num)', 'Submit::pesan/$1');
+$routes->get('submit/confirm/(:num)', 'Submit::confirm/$1');
 
 $routes->get('delete/soal/(:num)/(:num)', 'Delete::soal/$1/$2');
 
@@ -72,7 +72,7 @@ $routes->get('/info', 'Exercise::info');
 $routes->get('/review', 'Exercise::review');
 $routes->get('/request', 'Exercise::beli');
 $routes->get('/belipaket/(:segment)', 'Exercise::belipaket/$1');
-
+$routes->get('/confirm', 'Exercise::beli');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

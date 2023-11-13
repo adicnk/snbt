@@ -25,7 +25,7 @@ class KategoriMDL extends Model
         $query = $this->findAll();
         foreach($query as $qry){
             if ($qry['id']==$id){
-                    return $qry['name'];
+                    return $qry['jumlah_soal'];
             }
         }
     }

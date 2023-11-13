@@ -304,6 +304,7 @@ class Exercise extends BaseController
             'user_id' => $userID,
             'subcribe_id' => 2,
             'kategori_soal_id' => $idKategoriSoal,
+            'total' => $total,
             'is_request' => 1     
         ]);
 

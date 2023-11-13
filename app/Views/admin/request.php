@@ -78,8 +78,8 @@
                     <td style="text-align: center"><?= $us['is_message'] ? '<img src="../../icon/available.png" class="mr-2" />' : '<img src="../../icon/not_available.png" class="mr-2" />' ?></td>
                     <td style="text-align: center"> <?= $us['is_confirm'] ? '<img src="../../icon/available.png" class="mr-2" />' : '<img src="../../icon/not_available.png" class="mr-2" />' ?></td>
                     <td>
-                        <a href="/submit/pesan/<?=$us['user_id']?>"><img src=" ../../icon/message.png" class="mr-2" /></a>
-                        <a href="/submit/confirm/<?=$us['user_id']?>"><img src="../../icon/confirm.png" /></a>
+                        <a href="/submit/pesan/<?=$us['id']?>"><img src=" ../../icon/message.png" class="mr-2" /></a>
+                        <a href="/submit/confirm/<?=$us['id']?>"><img src="../../icon/confirm.png" /></a>
                     </td>
                 </tr>
             <?php

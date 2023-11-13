@@ -284,24 +284,30 @@ class Submit extends BaseController
 
     public function pesan($id){
 
-        $hpUser = "";
-        $message = "";
+        $hpUser = "81214684065";
+        $message = "ok";
         $data = [
             'title' => 'Keperawatan | Daftar',
             'hp' => $hpUser,
             'message' => $message
         ];
-    
+        
         $this->userSubcribeModel->save([
             'id' => $id,
             'is_message' => 1
         ]);
 
-        return view('admin/pesan',$data);
-        //return redirect()->to('https://keperawatan.devinc.website');
+        //return view('admin/pesan',$data);
+        return redirect()->to('https://perawat.devinc.website/admin/belipaket');
     }
 
     public function confirm($id){
+        $this->userSubcribeModel->save([
+            'id' => $id,
+            'is_confirm' => 1
+        ]);
+
+        return redirect()->to('https://perawat.devinc.website/admin/belipaket');
 
     }
 

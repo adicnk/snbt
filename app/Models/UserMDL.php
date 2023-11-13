@@ -40,6 +40,15 @@ class UserMDL extends Model
         return  $this->like('name', $keyword);
     }
 
+    public function searhAdminID($id, $ops = false)
+    {
+        $this->table('user');
+        $this->where(['idx' => $id]);
+        $this->join('jurusan', 'jurusan.id = user.jurusan_id', 'left');
+        return  $this->findAll();
+    }
+
+
     public function searchPaket($id){
         $this->table('user');
         $this->where(['user.id' => $id]);
