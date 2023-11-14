@@ -315,6 +315,35 @@ class Exercise extends BaseController
         
     }
 
+    public function bayar($idKategoriSoal){
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login",
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
+        $idUserSubcribe = $this->userSubcribeModel->getID($idKategoriSoal,$userID);
+        $total = $this->kategoriModel->getTotalSoal($idKategoriSoal);
+
+        $this->userSubcribeModel->save([
+            'id' => $idUserSubcribe,
+            'user_id' => $userID,
+            'subcribe_id' => 2,
+            'kategori_soal_id' => $idKategoriSoal,
+            'total' => $total,
+            'is_request' => 1     
+        ]);
+
+        $data = [
+            'title' => 'Beli Paket'
+        ];
+            return view('exercise/deal',$data);
+        
+    }
+
     public function info()
     {
         $userID = session()->get('userID');
@@ -332,6 +361,22 @@ class Exercise extends BaseController
         return view('exercise/info', $data);
     }
 
+    public function confirm()
+    {
+        $userID = session()->get('userID');
+
+        $data = [
+            'title'   => "User Login"
+        ];                                 
+        if (!isset($userID)) {
+            return view('exercise/login', $data);            
+        }
+
+        $data = [
+            'title' => "PAIT @ PPNI"
+        ];
+        return view('exercise/confirm', $data);
+    }
 
     public function about()
     {

@@ -72,7 +72,9 @@ $routes->get('/info', 'Exercise::info');
 $routes->get('/review', 'Exercise::review');
 $routes->get('/request', 'Exercise::beli');
 $routes->get('/belipaket/(:segment)', 'Exercise::belipaket/$1');
-$routes->get('/confirm', 'Exercise::beli');
+$routes->get('/confirm', 'Exercise::confirm');
+$routes->get('/bayar(:segment)', 'Bayar::index/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

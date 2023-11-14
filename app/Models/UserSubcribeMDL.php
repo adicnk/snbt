@@ -28,4 +28,15 @@ class UserSubcribeMDL extends Model
         }
     }
     
+    public function confirmBayar($user,$cat){
+        $this->where(['subcribe_id' => $user]);
+        $this->where(['kategori_soal_id' => $cat]);
+        $this->where(['is_message' => 1]);
+        $query = $this->findAll();
+        dd($query);
+        foreach ($query as $q){
+            return $q['total'];
+        }
+    }    
+
 }
