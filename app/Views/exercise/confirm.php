@@ -1,4 +1,4 @@
-<?= $this->extend('template/dashboard-belajar') ?>
+<?= $this->extend('template/dashboard-confirm') ?>
 <?= $this->section('content') ?>
 
 <?php $db = \Config\Database::connect(); ?>
@@ -11,7 +11,7 @@
             </div> -->
             <div class="card-body">
                 
-                <form method="post" action="/bayar">
+                <form method="post" action="/bayar" enctype="multipart/form-data">
                     <?= csrf_field() ?>
                     
             <h4>Konfirmasi Pembayaran Pembelian Paket Soal</h4><hr/>
@@ -19,19 +19,28 @@
             foreach ($queryClass->getResult('array') as $k) :
                 $queryUS = $db->table('user_subcribe')->getWhere(['subcribe_id' => 1]);
             ?>
-            <button type="submit" onclick="setSoalClass(<?=$k['id']?>)"  class="btn btn-primary">
+            <a class="btn btn-primary">
             <span><?=$k['kname']?></span>
             <span class="badge badge-sm badge-circle badge-danger border border-white border-2">50</span>
-            </button>
+            </a>
             <h6>  <?= ($k['price']) ? 'Harga: Rp ' :'' ?><?= number_format($k['price']); ?>
-            <button type="submit" onclick="setSoalClass(<?=$k['id']?>)"  class="btn btn-primary">
-            <?php endforeach ?>
+                
+            <div class="form-row align-items-right mt-3">
+                <div class="col-7">                    
+                    <div><em>Unggah bukti transfer anda</em></div>
+                    <div>
+                        <input type="file" name="fileGambar" id="fileGambar">
+                        <button type="submit" onclick="setSoalClass(<?=$k['id']?>)"  class="btn btn-secondary">Konfirmasi</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr/><?php endforeach ?>
                 
             <input type="hidden" id="soalClass" name="soalClass">
             </form>
             </div>
             <div class="card-footer">
-                </div>
             </div>
         </div>
     </div>

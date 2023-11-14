@@ -30,32 +30,32 @@ class Bayar extends BaseController
 
     public function index()
     {
+
         $userID = session()->get('userID');
         $catID = $this->request->getVar('soalClass');
+        $fileGambar = $this->request->getFile('fileGambar');
 
-        $data = [
-            'title'   => "User Login",
-        ];                                 
-        if (!isset($userID)) {
-            return view('exercise/login', $data);            
-        }
 
+        $namaFile = $fileGambar->getName();
         $idUserSubcribe = $this->userSubcribeModel->getID($catID,$userID);
-        $total = $this->kategoriModel->getTotalSoal($catID);
+        $namaNewFile =$userID."-".$catID."-". $idUserSubcribe."-".$namaFile;
 
-        dd($idUserSubcribe);
+        $fileGambar->move('img');
+        rename(FCPATH."img/".$namaFile, FCPATH."img/".$namaNewFile);
 
         $this->userSubcribeModel->save([
             'id' => $idUserSubcribe,
             'user_id' => $userID,
             'kategori_soal_id' => $catID,
-            'is_confirm' => 1     
+            'is_confirm' => 1,   
+            'file' => $namaNewFile
         ]);
-
+    
         $data = [
             'title' => 'Beli Paket'
         ];
-            return view('exercise/deal',$data);
-        
-    }
+        return view('exercise/deal',$data);      
+                
+        }  
+ 
 }
