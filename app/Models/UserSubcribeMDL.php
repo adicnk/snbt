@@ -24,8 +24,10 @@ class UserSubcribeMDL extends Model
     public function getID($idKategoriSoal,$idUser){
         $query = $this->findAll();
         foreach ($query as $q){
-            if (($q['user_id']==$idUser) AND ($q['kategori_soal_id']==$idKategoriSoal)) {
-                return $q['id'];
+            if ($q['is_confirm']) {
+                if (($q['user_id']==$idUser) AND ($q['kategori_soal_id']==$idKategoriSoal)) {
+                    return $q['id'];
+                }
             }
         }
     }

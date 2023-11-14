@@ -311,7 +311,8 @@ class Exercise extends BaseController
         $data = [
             'title' => 'Beli Paket'
         ];
-            return view('exercise/deal',$data);
+
+        return view('exercise/deal',$data);
         
     }
 
@@ -373,7 +374,7 @@ class Exercise extends BaseController
         }
 
         $data = [
-            'title' => "PAIT @ PPNI"
+            'title' => "Konfirmasi Pembayaran"
         ];
         return view('exercise/confirm', $data);
     }
