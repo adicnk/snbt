@@ -374,7 +374,8 @@ class Exercise extends BaseController
         }
 
         $data = [
-            'title' => "Konfirmasi Pembayaran"
+            'title' => "Konfirmasi Pembayaran",
+            'validation'=> \Config\Services::validation()
         ];
         return view('exercise/confirm', $data);
     }

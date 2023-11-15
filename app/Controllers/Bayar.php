@@ -35,27 +35,34 @@ class Bayar extends BaseController
         $catID = $this->request->getVar('soalClass');
         $fileGambar = $this->request->getFile('fileGambar');
 
+        if($fileGambar->getName()){
 
-        $namaFile = $fileGambar->getName();
-        $idUserSubcribe = $this->userSubcribeModel->getID($catID,$userID);
-        $namaNewFile =$userID."-".$catID."-". $idUserSubcribe."-".$namaFile;
+            $namaFile = $fileGambar->getName();
+            $idUserSubcribe = $this->userSubcribeModel->getID($catID,$userID);
+            $namaNewFile =$userID."-".$catID."-". $idUserSubcribe."-".$namaFile;
 
-        $fileGambar->move('img');
-        rename(FCPATH."img/".$namaFile, FCPATH."img/".$namaNewFile);
+            $fileGambar->move('img');
+            rename(FCPATH."img/".$namaFile, FCPATH."img/".$namaNewFile);
 
-        $this->userSubcribeModel->save([
-            'id' => $idUserSubcribe,
-            'user_id' => $userID,
-            'kategori_soal_id' => $catID,
-            'is_confirm' => 1,   
-            'file' => $namaNewFile
-        ]);
-    
-        $data = [
-            'title' => 'Beli Paket'
-        ];
-        return view('exercise/deal',$data);      
-                
-        }  
- 
+            $this->userSubcribeModel->save([
+                'id' => $idUserSubcribe,
+                'user_id' => $userID,
+                'kategori_soal_id' => $catID,
+                'is_confirm' => 1,   
+                'file' => $namaNewFile
+            ]);
+        
+            $data = [
+                'title' => 'Beli Paket'
+            ];
+            return view('exercise/deal',$data);      
+                    
+            }  
+            $data = [
+                'title' => 'Konfirmasi Pembayaran',
+                'validation'=> \Config\Services::validation()
+            ];
+            return view('exercise/confirm',$data);      
+     
+        }
 }

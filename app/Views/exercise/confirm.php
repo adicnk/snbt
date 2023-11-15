@@ -15,27 +15,31 @@
                     <?= csrf_field() ?>
                     
             <h4>Konfirmasi Pembayaran Pembelian Paket Soal</h4><hr/>
-            <?php $queryClass = $db->table('kategori_soal')->getWhere(['is_tp' => 1]);
-            foreach ($queryClass->getResult('array') as $k) :
-                $queryUS = $db->table('user_subcribe')->getWhere(['subcribe_id' => 1]);
+            <?php $userID = session()->get('userID'); 
+                $nilaiNull; 
+                $query = $db->query("SELECT * FROM user_subcribe as us 
+                INNER JOIN kategori_soal as ks 
+                WHERE us.subcribe_id = ks.id AND us.is_confirm is NULL AND us.user_id=".$userID);                
+                foreach ($query->getResultArray() as $q) :
             ?>
             <a class="btn btn-primary">
-            <span><?=$k['kname']?></span>
+            <span><?=$q['kname']?></span>
             <span class="badge badge-sm badge-circle badge-danger border border-white border-2">50</span>
             </a>
-            <h6>  <?= ($k['price']) ? 'Harga: Rp ' :'' ?><?= number_format($k['price']); ?>
+            <h6>  <?= ($q['price']) ? 'Harga: Rp ' :'' ?><?= number_format($q['price']); ?>
                 
             <div class="form-row align-items-right mt-3">
                 <div class="col-7">                    
                     <div><em>Unggah bukti transfer anda</em></div>
                     <div>
-                        <input type="file" name="fileGambar" id="fileGambar">
-                        <button type="submit" onclick="setSoalClass(<?=$k['id']?>)"  class="btn btn-secondary">Konfirmasi</button>
+                        <input type="file" name="fileGambar" id="fileGambar" class="form-control-file <?= ($validation->hasError('fileGambar')) ? ' is-invalid': ''?>">
+                        <div class="invalid-feedback"><?= $validation->getError('fileGambar')?></div>
+                        <button type="submit" onclick="setSoalClass(<?=$q['kategori_soal_id']?>)"  class="btn btn-secondary">Konfirmasi</button>
                     </div>
                 </div>
             </div>
 
-            <hr/><?php endforeach ?>
+            <hr/><?php endforeach;  ?>
                 
             <input type="hidden" id="soalClass" name="soalClass">
             </form>
